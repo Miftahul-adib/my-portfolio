@@ -1,0 +1,84 @@
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dash {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.heading {
+  color: var(--color-blue);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.rule {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+  margin-bottom: 32px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 120px;
+}
+
+.card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-bright);
+}
+
+.repoName {
+  color: var(--color-blue);
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.repoDesc {
+  color: var(--text-secondary);
+  font-size: 0.83rem;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.link {
+  color: var(--color-blue);
+  font-size: 0.83rem;
+  text-decoration: none;
+  margin-top: 16px;
+  display: inline-block;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.bracket {
+  color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

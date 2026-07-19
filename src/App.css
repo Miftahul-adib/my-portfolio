@@ -1,0 +1,32 @@
+.pageWrapper {
+  padding-top: 56px;
+}
+
+.contentContainer {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.sectionGap {
+  margin-bottom: 96px;
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  margin-top: 96px;
+  padding: 32px 0;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+  .contentContainer {
+    padding: 0 16px;
+  }
+
+  .sectionGap {
+    margin-bottom: 64px;
+  }
+}
