@@ -9,7 +9,7 @@ const papers = [
     publication: null,
     links: [
       { label: 'arxiv', href: 'https://arxiv.org/abs/2601.05814' },
-      { label: 'github', href: 'https://github.com/Miftahul-adib' },
+      { label: 'github', href: 'https://github.com/Miftahul-adib/sleep-disorder' },
     ],
   },
   {
@@ -20,7 +20,7 @@ const papers = [
     publication: 'International Journal of Activity and Behavior Computing, Vol. 2026, Issue 2',
     links: [
       { label: 'paper', href: 'https://www.jstage.jst.go.jp/article/ijabc/2026/2/2026_160/_article' },
-      { label: 'github', href: 'https://github.com/Miftahul-adib' },
+      { label: 'github', href: 'https://github.com/Miftahul-adib/Coverage-preserving-localization' },
     ],
   },
 ]
