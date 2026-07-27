@@ -18,14 +18,6 @@ const competitions = [
     link: 'https://github.com/Miftahul-adib/Duet-AI-Hackathon-solution',
   },
   {
-    name: 'THE INFINITY AI BUILDFEST',
-    badge: 'Final Round',
-    description: 'Built SkinAI, a platform connecting rural patients with nearby doctors while providing initial skin condition predictions. Selected for both preliminary and final round.',
-    team: 'Backprop Sust',
-    host: 'BRAC University, Dhaka — Healthcare track',
-    link: null,
-  },
-  {
     name: 'PoliMemeDecode — National Datathon',
     badge: 'rank 20 / 151 teams',
     description: 'Political meme classification using a dual-encoder setup (DeBERTa-v3 + RoBERTa) with YOLO logo detection and InsightFace for multimodal understanding.',
@@ -33,6 +25,16 @@ const competitions = [
     host: 'CUET CSE FEST 2025',
     link: 'https://github.com/Miftahul-adib/CUET-CSE-FEST-2025-NATIONAL-DATATHON',
   },
+
+    {
+    name: 'THE INFINITY AI BUILDFEST',
+    badge: 'Final Round',
+    description: 'Built SkinAI, a platform connecting rural patients with nearby doctors while providing initial skin condition predictions. Selected for both preliminary and final round.',
+    team: null,
+    host: 'BRAC University, Dhaka — Healthcare track',
+    link: null,
+    },
+  
 ]
 
 export default function Competitions() {
