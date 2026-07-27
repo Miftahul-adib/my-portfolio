@@ -1,83 +1,70 @@
-import styles from './Competitions.module.css'
+import styles from './Research.module.css'
 
-const competitions = [
+const papers = [
   {
-    name: 'Shobdotori — Bangla Dialect Speech Recognition',
-    badge: '4th / 60+ teams',
-    description: 'Bangla dialect speech recognition using a dual-stage fine-tuning pipeline with Whisper Medium and LoRA. Competed against 60+ teams.',
-    team: 'Backprop Sust',
-    host: 'Dept. of ETE, CUET',
-    link: 'https://github.com/Miftahul-adib/AIFication-4th-Place-Solution-BackpropSust',
+    status: 'under review',
+    year: 'Jan 2026',
+    title: 'A Dual Pipeline Machine Learning Framework for Automated Multi-Class Sleep Disorder Screening Using Hybrid Resampling and Ensemble Learning',
+    description: 'Designed a dual-pipeline architecture to model physiological dependencies. Applied SMOTETomek resampling to address class imbalance. Achieved 98.67% accuracy, outperforming all baseline models. Validated statistical significance using the Wilcoxon Signed-Rank Test.',
+    publication: null,
+    links: [
+      { label: 'arxiv', href: 'https://arxiv.org/abs/2601.05814' },
+      { label: 'github', href: 'https://github.com/Miftahul-adib/sleep-disorder' },
+    ],
   },
   {
-    name: 'DUET AI Hackathon — RoadVision',
-    badge: 'top 15 / 101 teams',
-    description: 'YOLOv8-based multi-class vehicle detection pipeline for Bangladesh highway CCTV footage. Qualified and presented onsite. Sponsored by ICT Division Bangladesh.',
-    team: 'Backprop Sust',
-    host: 'Dept. of CSE, DUET',
-    link: 'https://github.com/Miftahul-adib/Duet-AI-Hackathon-solution',
+    status: 'published',
+    year: 'April 2026',
+    title: 'A Coverage Preserving Ensemble Framework with Minority Recovery for Robust Indoor Localization',
+    description: 'BLE-based indoor localization framework for nursing care environments. Uses Random Forest classification, temporal smoothing, adaptive thresholding, and minority room recovery. Presented at ABC 2026 Conference.',
+    publication: 'International Journal of Activity and Behavior Computing, Vol. 2026, Issue 2',
+    links: [
+      { label: 'paper', href: 'https://www.jstage.jst.go.jp/article/ijabc/2026/2/2026_160/_article' },
+      { label: 'github', href: 'https://github.com/Miftahul-adib/Coverage-preserving-localization' },
+    ],
   },
-  {
-    name: 'PoliMemeDecode — National Datathon',
-    badge: 'rank 20 / 151 teams',
-    description: 'Political meme classification using a dual-encoder setup (DeBERTa-v3 + RoBERTa) with YOLO logo detection and InsightFace for multimodal understanding.',
-    team: 'Backprop Sust',
-    host: 'CUET CSE FEST 2025',
-    link: 'https://github.com/Miftahul-adib/CUET-CSE-FEST-2025-NATIONAL-DATATHON',
-  },
-
-    {
-    name: 'THE INFINITY AI BUILDFEST',
-    badge: 'Final Round',
-    description: 'Built SkinAI, a platform connecting rural patients with nearby doctors while providing initial skin condition predictions. Selected for both preliminary and final round.',
-    team: null,
-    host: 'BRAC University, Dhaka — Healthcare track',
-    link: null,
-    },
-  
 ]
 
-export default function Competitions() {
+export default function Research() {
   return (
     <section>
       <div className={styles.sectionHeader}>
-        <h2 className={styles.heading}>Competitions</h2>
+        <h2 className={styles.heading}>Research</h2>
       </div>
       <hr className={styles.rule} />
 
       <div className={styles.stack}>
-        {competitions.map((comp, i) => (
+        {papers.map((paper, i) => (
           <div key={i} className={styles.card}>
             <div className={styles.topRow}>
-              <span className={styles.name}>{comp.name}</span>
-              <span className={styles.badge}>{comp.badge}</span>
+              <span className={paper.status === 'published' ? styles.badgePublished : styles.badgeReview}>
+                {paper.status}
+              </span>
+              <span className={styles.year}>{paper.year}</span>
             </div>
 
-            <p className={styles.description}>{comp.description}</p>
+            <p className={styles.title}>{paper.title}</p>
+            <p className={styles.description}>{paper.description}</p>
 
-            <div className={styles.meta}>
-              <span className={styles.metaLine}>
-                <span className={styles.metaLabel}>team: </span>{comp.team}
-              </span>
-              <span className={styles.metaLine}>
-                <span className={styles.metaLabel}>host: </span>{comp.host}
-              </span>
-            </div>
+            {paper.publication && (
+              <p className={styles.publication}>{paper.publication}</p>
+            )}
 
-            {comp.link && (
-              <div className={styles.linkRow}>
+            <div className={styles.linksRow}>
+              {paper.links.map((link) => (
                 <a
-                  href={comp.link}
+                  key={link.label}
+                  href={link.href}
                   className={styles.link}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <span className={styles.bracket}>[</span>
-                  view solution
+                  {link.label}
                   <span className={styles.bracket}>]</span>
                 </a>
-              </div>
-            )}
+              ))}
+            </div>
           </div>
         ))}
       </div>
