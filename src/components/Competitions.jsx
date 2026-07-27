@@ -18,8 +18,16 @@ const competitions = [
     link: 'https://github.com/Miftahul-adib/Duet-AI-Hackathon-solution',
   },
   {
+    name: 'THE INFINITY AI BUILDFEST',
+    badge: 'Final Round',
+    description: 'Built SkinAI, a platform connecting rural patients with nearby doctors while providing initial skin condition predictions. Selected for both preliminary and final round.',
+    team: 'Backprop Sust',
+    host: 'BRAC University, Dhaka — Healthcare track',
+    link: null,
+  },
+  {
     name: 'PoliMemeDecode — National Datathon',
-    badge: 'Kaggle private leaderboard rank 20 of 151 teams',
+    badge: 'rank 20 / 151 teams',
     description: 'Political meme classification using a dual-encoder setup (DeBERTa-v3 + RoBERTa) with YOLO logo detection and InsightFace for multimodal understanding.',
     team: 'Backprop Sust',
     host: 'CUET CSE FEST 2025',
@@ -54,18 +62,20 @@ export default function Competitions() {
               </span>
             </div>
 
-            <div className={styles.linkRow}>
-              <a
-                href={comp.link}
-                className={styles.link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className={styles.bracket}>[</span>
-                view solution
-                <span className={styles.bracket}>]</span>
-              </a>
-            </div>
+            {comp.link && (
+              <div className={styles.linkRow}>
+                <a
+                  href={comp.link}
+                  className={styles.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span className={styles.bracket}>[</span>
+                  view solution
+                  <span className={styles.bracket}>]</span>
+                </a>
+              </div>
+            )}
           </div>
         ))}
       </div>
