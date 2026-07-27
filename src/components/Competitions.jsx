@@ -23,7 +23,7 @@ const competitions = [
     description: 'Built SkinAI, a platform connecting rural patients with nearby doctors while providing initial skin condition predictions. Selected for both preliminary and final round.',
     team: 'Gold Experience',
     host: 'BRAC University, Dhaka — Healthcare track',
-    link: ,
+    link: null,
   },
   {
     name: 'PoliMemeDecode — National Datathon',
