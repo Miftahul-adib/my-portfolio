@@ -19,13 +19,15 @@ function App() {
         <div className="contentContainer">
           <Hero />
           <div className="sectionGap" id="about"><About /></div>
+    
+          <div className="sectionGap" id="education"><Education /></div>
+          <div className="sectionGap" id="volunteering"><Volunteering /></div>
           <div className="sectionGap" id="skills"><Skills /></div>
           <div className="sectionGap" id="research"><Research /></div>
           <div className="sectionGap" id="competitions"><Competitions /></div>
           <div className="sectionGap" id="projects"><Projects /></div>
           <div className="sectionGap" id="other-works"><OtherWorks /></div>
-          <div className="sectionGap" id="volunteering"><Volunteering /></div>
-          <div className="sectionGap" id="education"><Education /></div>
+
           <div className="sectionGap" id="contact"><Contact /></div>
         </div>
         <footer>
