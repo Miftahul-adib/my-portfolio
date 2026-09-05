@@ -3,8 +3,9 @@ import styles from './Navbar.module.css'
 
 const navItems = [
   { label: 'about', href: '#about' },
-  { label: 'skills', href: '#skills' },
+  { label: 'education', href: '#education' },
   { label: 'experience', href: '#volunteering' },
+  { label: 'skills', href: '#skills' },
   { label: 'research', href: '#research' },
   { label: 'competitions', href: '#competitions' },
   { label: 'projects', href: '#projects' },
