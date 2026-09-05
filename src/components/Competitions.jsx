@@ -9,6 +9,15 @@ const competitions = [
     host: 'Dept. of ETE, CUET',
     link: 'https://github.com/Miftahul-adib/AIFication-4th-Place-Solution-BackpropSust',
   },
+
+  {
+  name: 'Build With Gemma @Bangladesh 2026',
+  badge: '4th in Online Track',
+  description: 'Khata — a Gemma-powered pipeline that transforms whiteboard photos into structured board-exam practice.',
+  team: 'Backprop Sust',
+  host: 'Kaggle, Sponsored by Google DeepMind',
+  link: 'https://www.kaggle.com/competitions/build-with-gemma-bangladesh/writeups/new-writeup-1785044974927',
+},
   {
     name: 'DUET AI Hackathon — RoadVision',
     badge: 'top 15 / 101 teams',
