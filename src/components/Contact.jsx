@@ -74,7 +74,7 @@ export default function Contact() {
 
           <div className="reveal contact__cv-wrapper">
             <a
-              href="/cv.pdf"
+              href="/my-portfolio/cv.pdf"
               className="contact__cv-link"
               download
             >
