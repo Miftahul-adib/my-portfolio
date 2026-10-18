@@ -61,9 +61,7 @@ export default function Contact() {
           <div className="reveal section-label">CONTACT</div>
           <h2 className="reveal section-heading">Get In Touch</h2>
 
-          <p className="reveal contact__body">
-            I'm open to research collaborations, PhD opportunities, and conversations about anything at the intersection of data and problems that matter. If you're working on something interesting, reach out.
-          </p>
+  
 
           <div className="reveal contact__email-wrapper">
             <a

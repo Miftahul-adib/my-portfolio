@@ -7,6 +7,7 @@ const NAV_LINKS = [
   { label: 'PROJECTS', href: '#projects' },
   { label: 'COMPETITIONS', href: '#competitions' },
   { label: 'SKILLS', href: '#skills' },
+  { label: 'GOALS', href: '#goals' },
   { label: 'CONTACT', href: '#contact' },
 ]
 
@@ -20,7 +21,7 @@ export default function Navbar() {
       const scrollY = window.scrollY
       const coverHeight = window.innerHeight
 
-      if (scrollY > coverHeight * 0.8) {
+      if (scrollY > 300) {
         if (!appeared) {
           setVisible(true)
           setAppeared(true)

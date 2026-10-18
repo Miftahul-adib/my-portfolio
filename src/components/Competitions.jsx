@@ -9,6 +9,7 @@ const COMPETITIONS = [
     title: 'Bangla Dialect Speech Recognition',
     method: 'Dual-stage fine-tuning pipeline using Whisper Medium and LoRA for dialect-aware Bangla speech recognition.',
     tags: ['Whisper', 'LoRA', 'Speech', 'Bengali'],
+    team: 'BackpropSust',
     code: 'https://github.com/Miftahul-adib/AIFication-4th-Place-Solution-BackpropSust',
   },
   {
@@ -17,6 +18,7 @@ const COMPETITIONS = [
     title: 'RoadVision — Vehicle Detection',
     method: 'YOLOv8-based multi-class vehicle detection pipeline trained and evaluated on Bangladesh highway CCTV footage.',
     tags: ['YOLOv8', 'Object Detection', 'Computer Vision'],
+    team: 'BackpropSust',
     code: 'https://github.com/Miftahul-adib/Duet-AI-Hackathon-solution',
   },
   {
@@ -25,6 +27,7 @@ const COMPETITIONS = [
     title: 'PoliMemeDecode — Political Meme Classification',
     method: 'Dual-encoder setup (DeBERTa-v3 + RoBERTa) combined with YOLO logo detection and InsightFace for multimodal political meme classification.',
     tags: ['DeBERTa', 'RoBERTa', 'YOLO', 'Multimodal', 'NLP'],
+    team: 'BackpropSust',
     code: 'https://github.com/Miftahul-adib/PoliMemeDecode',
   },
   {
@@ -41,6 +44,7 @@ const COMPETITIONS = [
     title: 'Khata — Whiteboard-to-Practice Pipeline',
     method: 'Gemma-powered pipeline that photographs a classroom whiteboard and converts it into structured board-exam practice questions.',
     tags: ['Gemma', 'LLM', 'Education', 'Multimodal'],
+    team: 'BackpropSust',
     writeup: 'https://www.kaggle.com/competitions/build-with-gemma-bangladesh/writeups/new-writeup-1785044974927',
   },
 ]
@@ -82,7 +86,7 @@ export default function Competitions() {
         <p className="reveal section-intro">
           National and international competitions in NLP, computer vision, and applied AI.
           <br />
-          <span className="comp__team-note">All competitions under team BackpropSust unless noted.</span>
+         
         </p>
 
         {/* Timeline */}

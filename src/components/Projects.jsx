@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import './Projects.css'
 
@@ -56,15 +56,8 @@ const PROJECTS = [
   },
 ]
 
-const FILTERS = ['All', 'NLP', 'Healthcare', 'Computer Vision', 'Tools & Systems']
-
 export default function Projects() {
-  const [active, setActive] = useState('All')
   const ref = useScrollReveal()
-
-  const filtered = active === 'All'
-    ? PROJECTS
-    : PROJECTS.filter(p => p.category === active)
 
   return (
     <section id="projects" className="projects-section">
@@ -75,22 +68,8 @@ export default function Projects() {
           Systems, tools, and experiments — applied ML and NLP across health, language, and vision.
         </p>
 
-        {/* Filter bar */}
-        <div className="reveal projects__filters">
-          {FILTERS.map(f => (
-            <button
-              key={f}
-              className={`projects__filter-pill ${active === f ? 'projects__filter-pill--active' : ''}`}
-              onClick={() => setActive(f)}
-            >
-              {f}
-            </button>
-          ))}
-        </div>
-
-        {/* Grid */}
         <div className="projects__grid">
-          {filtered.map((p) => (
+          {PROJECTS.map((p) => (
             <div key={p.name} className="reveal projects__card card-base">
               <div className="projects__card-inner">
                 {p.featured && (

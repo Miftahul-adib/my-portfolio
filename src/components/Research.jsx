@@ -69,11 +69,11 @@ export default function Research() {
         <div className="reveal section-label">RESEARCH</div>
         <h2 className="reveal section-heading">Research Work</h2>
         <p className="reveal section-intro">
-          Published papers and ongoing investigations across healthcare AI, NLP, and clinical machine learning.
+          Completed papers and ongoing investigations across healthcare AI, NLP, and clinical machine learning.
         </p>
 
-        {/* Published */}
-        <div className="reveal research__sub-label research__sub-label--published">PUBLISHED</div>
+        {/* COMPLETED */}
+        <div className="reveal research__sub-label research__sub-label--published">COMPLETED</div>
         <div className="research__papers">
           {PUBLISHED.map((p) => (
             <div key={p.num} className="reveal research__paper-card">
