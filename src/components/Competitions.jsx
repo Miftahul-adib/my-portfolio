@@ -1,92 +1,124 @@
-import styles from './Competitions.module.css'
+import React, { useEffect, useRef } from 'react'
+import { useScrollReveal } from '../hooks/useScrollReveal'
+import './Competitions.css'
 
-const competitions = [
+const COMPETITIONS = [
   {
-    name: 'Shobdotori — Bangla Dialect Speech Recognition',
-    badge: '4th / 60+ teams',
-    description: 'Bangla dialect speech recognition using a dual-stage fine-tuning pipeline with Whisper Medium and LoRA. Competed against 60+ teams.',
-    team: 'Backprop Sust',
-    host: 'Dept. of ETE, CUET',
-    link: 'https://github.com/Miftahul-adib/AIFication-4th-Place-Solution-BackpropSust',
-  },
-
-  {
-  name: 'Build With Gemma @Bangladesh 2026',
-  badge: '4th in Online Track',
-  description: 'Khata — a Gemma-powered pipeline that transforms whiteboard photos into structured board-exam practice.',
-  team: 'Backprop Sust',
-  host: 'Kaggle, Sponsored by Google DeepMind',
-  link: 'https://www.kaggle.com/competitions/build-with-gemma-bangladesh/writeups/new-writeup-1785044974927',
-},
-  {
-    name: 'DUET AI Hackathon — RoadVision',
-    badge: 'top 15 / 101 teams',
-    description: 'YOLOv8-based multi-class vehicle detection pipeline for Bangladesh highway CCTV footage. Qualified and presented onsite. Sponsored by ICT Division Bangladesh.',
-    team: 'Backprop Sust',
-    host: 'Dept. of CSE, DUET',
-    link: 'https://github.com/Miftahul-adib/Duet-AI-Hackathon-solution',
+    badge: '4th Place',
+    organizer: 'Shobdotori · AIFication',
+    title: 'Bangla Dialect Speech Recognition',
+    method: 'Dual-stage fine-tuning pipeline using Whisper Medium and LoRA for dialect-aware Bangla speech recognition.',
+    tags: ['Whisper', 'LoRA', 'Speech', 'Bengali'],
+    code: 'https://github.com/Miftahul-adib/AIFication-4th-Place-Solution-BackpropSust',
   },
   {
-    name: 'THE INFINITY AI BUILDFEST',
+    badge: 'Top 15 / 101 Teams',
+    organizer: 'DUET AI Hackathon',
+    title: 'RoadVision — Vehicle Detection',
+    method: 'YOLOv8-based multi-class vehicle detection pipeline trained and evaluated on Bangladesh highway CCTV footage.',
+    tags: ['YOLOv8', 'Object Detection', 'Computer Vision'],
+    code: 'https://github.com/Miftahul-adib/Duet-AI-Hackathon-solution',
+  },
+  {
+    badge: 'Rank 20 / 151 Teams',
+    organizer: 'National Datathon',
+    title: 'PoliMemeDecode — Political Meme Classification',
+    method: 'Dual-encoder setup (DeBERTa-v3 + RoBERTa) combined with YOLO logo detection and InsightFace for multimodal political meme classification.',
+    tags: ['DeBERTa', 'RoBERTa', 'YOLO', 'Multimodal', 'NLP'],
+    code: 'https://github.com/Miftahul-adib/PoliMemeDecode',
+  },
+  {
     badge: 'Final Round',
-    description: 'Built SkinAI, a platform connecting rural patients with nearby doctors while providing initial skin condition predictions. Selected for both preliminary and final round.',
-    team: 'Gold Experience',
-    host: 'BRAC University, Dhaka — Healthcare track',
-    link: null,
+    organizer: 'Infinity AI Buildfest · BRAC University',
+    title: 'SkinAI — Rural Healthcare Access',
+    method: 'Platform connecting rural patients in Bangladesh with nearby doctors, with initial skin condition prediction from uploaded images. Selected for preliminary and final round (Healthcare track).',
+    tags: ['Healthcare', 'Computer Vision', 'Deployment'],
+    team: 'Paradox',
   },
   {
-    name: 'PoliMemeDecode — National Datathon',
-    badge: 'rank 20 / 151 teams',
-    description: 'Political meme classification using a dual-encoder setup (DeBERTa-v3 + RoBERTa) with YOLO logo detection and InsightFace for multimodal understanding.',
-    team: 'Backprop Sust',
-    host: 'CUET CSE FEST 2025',
-    link: 'https://github.com/Miftahul-adib/CUET-CSE-FEST-2025-NATIONAL-DATATHON',
+    badge: '4th Place · Online Track',
+    organizer: 'Build With Gemma @Bangladesh 2026 · Kaggle · Google DeepMind',
+    title: 'Khata — Whiteboard-to-Practice Pipeline',
+    method: 'Gemma-powered pipeline that photographs a classroom whiteboard and converts it into structured board-exam practice questions.',
+    tags: ['Gemma', 'LLM', 'Education', 'Multimodal'],
+    writeup: 'https://www.kaggle.com/competitions/build-with-gemma-bangladesh/writeups/new-writeup-1785044974927',
   },
 ]
 
-export default function Competitions() {
+function TimelineDot({ visible }) {
   return (
-    <section>
-      <div className={styles.sectionHeader}>
-        <h2 className={styles.heading}>Competitions</h2>
-      </div>
-      <hr className={styles.rule} />
+    <div className={`comp__dot ${visible ? 'comp__dot--visible' : ''}`} />
+  )
+}
 
-      <div className={styles.stack}>
-        {competitions.map((comp, i) => (
-          <div key={i} className={styles.card}>
-            <div className={styles.topRow}>
-              <span className={styles.name}>{comp.name}</span>
-              <span className={styles.badge}>{comp.badge}</span>
-            </div>
+export default function Competitions() {
+  const ref = useScrollReveal()
+  const dotsRef = useRef([])
 
-            <p className={styles.description}>{comp.description}</p>
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('comp__dot--visible')
+          }
+        })
+      },
+      { threshold: 0.5 }
+    )
 
-            <div className={styles.meta}>
-              <span className={styles.metaLine}>
-                <span className={styles.metaLabel}>team: </span>{comp.team}
-              </span>
-              <span className={styles.metaLine}>
-                <span className={styles.metaLabel}>host: </span>{comp.host}
-              </span>
-            </div>
+    dotsRef.current.forEach(dot => {
+      if (dot) observer.observe(dot)
+    })
 
-            {comp.link && (
-              <div className={styles.linkRow}>
-                <a
-                  href={comp.link}
-                  className={styles.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <span className={styles.bracket}>[</span>
-                  view solution
-                  <span className={styles.bracket}>]</span>
-                </a>
+    return () => observer.disconnect()
+  }, [])
+
+  return (
+    <section id="competitions" className="competitions-section">
+      <div className="section-wrapper" ref={ref}>
+        <div className="reveal section-label">COMPETITIONS</div>
+        <h2 className="reveal section-heading">Competitive ML</h2>
+        <p className="reveal section-intro">
+          National and international competitions in NLP, computer vision, and applied AI.
+          <br />
+          <span className="comp__team-note">All competitions under team BackpropSust unless noted.</span>
+        </p>
+
+        {/* Timeline */}
+        <div className="comp__timeline">
+          <div className="comp__line" />
+          {COMPETITIONS.map((c, i) => (
+            <div key={c.title} className="reveal comp__entry">
+              <div
+                className="comp__dot"
+                ref={el => dotsRef.current[i] = el}
+              />
+              <div className="comp__card card-base">
+                <div className="comp__card-header">
+                  <span className="comp__organizer">{c.organizer}</span>
+                  <span className="comp__badge">{c.badge}</span>
+                </div>
+                <h3 className="comp__title">{c.title}</h3>
+                {c.team && (
+                  <p className="comp__team">Team: {c.team}</p>
+                )}
+                <p className="comp__method">{c.method}</p>
+                <div className="comp__tags">
+                  {c.tags.map(t => <span key={t} className="tag-pill">{t}</span>)}
+                </div>
+                <div className="comp__links">
+                  {c.code && (
+                    <a href={c.code} target="_blank" rel="noopener noreferrer" className="link-pill">Code ↗</a>
+                  )}
+                  {c.writeup && (
+                    <a href={c.writeup} target="_blank" rel="noopener noreferrer" className="link-pill">Writeup ↗</a>
+                  )}
+                </div>
               </div>
-            )}
-          </div>
-        ))}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   )

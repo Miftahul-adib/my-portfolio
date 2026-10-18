@@ -1,41 +1,29 @@
-import './App.css'
-import Navbar from './components/Navbar'
+import React from 'react'
+import Cover from './components/Cover'
 import Hero from './components/Hero'
+import Navbar from './components/Navbar'
 import About from './components/About'
-import Volunteering from './components/Volunteering'
-import Education from './components/Education'
-import Skills from './components/Skills'
 import Research from './components/Research'
-import Competitions from './components/Competitions'
 import Projects from './components/Projects'
-import OtherWorks from './components/OtherWorks'
+import Competitions from './components/Competitions'
+import Skills from './components/Skills'
 import Contact from './components/Contact'
+import './App.css'
 
-function App() {
+export default function App() {
   return (
     <>
       <Navbar />
-      <div className="pageWrapper">
-        <div className="contentContainer">
-          <Hero />
-          <div className="sectionGap" id="about"><About /></div>
-    
-          <div className="sectionGap" id="education"><Education /></div>
-          <div className="sectionGap" id="volunteering"><Volunteering /></div>
-          <div className="sectionGap" id="skills"><Skills /></div>
-          <div className="sectionGap" id="research"><Research /></div>
-          <div className="sectionGap" id="competitions"><Competitions /></div>
-          <div className="sectionGap" id="projects"><Projects /></div>
-          <div className="sectionGap" id="other-works"><OtherWorks /></div>
-
-          <div className="sectionGap" id="contact"><Contact /></div>
-        </div>
-        <footer>
-          <span>G.M.M. Miftahul Alam Adib, 2026</span>
-        </footer>
-      </div>
+      <main>
+        <Cover />
+        <Hero />
+        <About />
+        <Research />
+        <Projects />
+        <Competitions />
+        <Skills />
+        <Contact />
+      </main>
     </>
   )
 }
-
-export default App

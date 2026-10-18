@@ -1,59 +1,64 @@
-import styles from './Skills.module.css'
+import React from 'react'
+import { useScrollReveal } from '../hooks/useScrollReveal'
+import './Skills.css'
 
-const skillGroups = [
+const GROUPS = [
   {
-    label: 'languages',
-    skills: ['Python', 'SQL', 'HTML'],
+    heading: 'ML & Deep Learning',
+    accentColor: 'var(--accent-blue)',
+    items: ['PyTorch', 'TensorFlow', 'Scikit-learn', 'OpenCV', 'HuggingFace', 'YOLO', 'Whisper', 'LangChain', 'LangGraph', 'Keras'],
   },
   {
-    label: 'machine learning',
-    skills: ['PyTorch', 'TensorFlow', 'Scikit-Learn', 'OpenCV', 'YOLO', 'Hugging Face', 'Whisper', 'LangChain'],
+    heading: 'Data Analysis & Statistics',
+    accentColor: 'var(--accent-magenta)',
+    items: ['Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'SciPy', 'Microsoft Excel', 'SPSS', 'Stata'],
   },
   {
-    label: 'databases',
-    skills: ['PostgreSQL', 'MySQL', 'SQLite', 'FAISS'],
+    heading: 'Databases',
+    accentColor: 'var(--accent-cyan)',
+    items: ['PostgreSQL', 'MySQL', 'SQLite', 'FAISS Vector DB'],
   },
   {
-    label: 'data & visualization',
-    skills: ['Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'SciPy', 'MS Excel'],
+    heading: 'Deployment & Web',
+    accentColor: 'var(--accent-blue)',
+    items: ['FastAPI', 'Streamlit', 'Pydantic', 'Docker', 'Render'],
   },
   {
-    label: 'statistical software',
-    skills: ['SPSS', 'Stata'],
-  },
-  {
-    label: 'web & deployment',
-    skills: ['FastAPI', 'Pydantic', 'Streamlit', 'Docker', 'Render', 'Railway', 'Vercel'],
-  },
-  {
-    label: 'tools & platforms',
-    skills: ['Git', 'GitHub', 'Kaggle'],
+    heading: 'Languages & Tools',
+    accentColor: 'var(--accent-magenta)',
+    items: ['Python', 'SQL', 'HTML5', 'Git', 'GitHub', 'Kaggle', 'Jupyter'],
   },
 ]
 
 export default function Skills() {
-  return (
-    <section>
-      <div className={styles.sectionHeader}>
-        <h2 className={styles.heading}>Skills</h2>
-      </div>
-      <hr className={styles.rule} />
+  const ref = useScrollReveal()
 
-      <div className={styles.grid}>
-        {skillGroups.map((group) => (
-          <div key={group.label} className={styles.card}>
-            <span className={styles.groupLabel}>
-              <span className={styles.bracket}>[</span>
-              {group.label}
-              <span className={styles.bracket}>]</span>
-            </span>
-            <div className={styles.pills}>
-              {group.skills.map((skill) => (
-                <span key={skill} className={styles.pill}>{skill}</span>
-              ))}
+  return (
+    <section id="skills" className="skills-section">
+      <div className="section-wrapper" ref={ref}>
+        <div className="reveal section-label">SKILLS</div>
+        <h2 className="reveal section-heading">Technical Stack</h2>
+        <p className="reveal section-intro">
+          Tools and frameworks I work with, grouped by domain.
+        </p>
+
+        <div className="skills__groups">
+          {GROUPS.map((g) => (
+            <div key={g.heading} className="reveal skills__group-card">
+              <h3
+                className="skills__group-heading"
+                style={{ color: g.accentColor }}
+              >
+                {g.heading}
+              </h3>
+              <div className="skills__pills">
+                {g.items.map(item => (
+                  <span key={item} className="skills__pill">{item}</span>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   )

@@ -1,24 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap');
-
+/* ===== DESIGN TOKENS ===== */
 :root {
-  --bg-page: #0d1117;
-  --bg-card: #161b22;
-  --bg-card-hover: #1c2330;
-  --bg-navbar: #0d1117;
-  --border: #21262d;
-  --border-bright: #30363d;
-  --color-green: #7ee787;
-  --color-blue: #79c0ff;
-  --color-purple: #d2a8ff;
-  --color-orange: #ffa657;
-  --color-red: #ff7b72;
-  --color-teal: #39d353;
-  --text-primary: #e6edf3;
-  --text-secondary: #8b949e;
-  --text-muted: #484f58;
-  --comment: #6e7681;
+  --bg-base: #080810;
+  --bg-surface: #0d0d1a;
+  --border-deep: #1a1a3e;
+  --accent-blue: #4fc3f7;
+  --accent-magenta: #d63af9;
+  --accent-cyan: #00e5ff;
+  --text-primary: #e8eaf6;
+  --text-secondary: #9e9eb8;
+  --text-highlight: #b2ebf2;
+  --gradient-bg: linear-gradient(180deg, #0a0a20 0%, #080810 100%);
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 }
 
+/* ===== RESET ===== */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -30,24 +27,156 @@ html {
 }
 
 body {
-  background-color: var(--bg-page);
+  background-color: var(--bg-base);
   color: var(--text-primary);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.875rem;
-  line-height: 1.75;
+  font-family: var(--font-body);
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 a {
-  color: var(--color-blue);
   text-decoration: none;
+  color: inherit;
 }
 
-a:hover {
-  text-decoration: underline;
+img {
+  max-width: 100%;
+  display: block;
 }
 
-::selection {
-  background: #264f78;
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* ===== SECTION LABEL (reusable) ===== */
+.section-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--accent-blue);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.section-label::before,
+.section-label::after {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--border-deep);
+}
+
+.section-heading {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(1.8rem, 4vw, 3rem);
   color: var(--text-primary);
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.section-intro {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--text-secondary);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 56px;
+  line-height: 1.7;
+}
+
+/* ===== SECTION WRAPPER ===== */
+.section-wrapper {
+  padding: 100px 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ===== SCROLL ENTRANCE ANIMATION ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== TAG PILL ===== */
+.tag-pill {
+  display: inline-block;
+  background: rgba(79, 195, 247, 0.08);
+  border: 1px solid rgba(79, 195, 247, 0.2);
+  border-radius: 20px;
+  padding: 3px 12px;
+  font-size: 0.72rem;
+  color: var(--accent-blue);
+  font-family: var(--font-mono);
+  white-space: nowrap;
+}
+
+/* ===== LINK PILL ===== */
+.link-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: transparent;
+  border: 1px solid var(--border-deep);
+  border-radius: 6px;
+  padding: 6px 16px;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.link-pill:hover {
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+}
+
+/* ===== CARD BASE ===== */
+.card-base {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-deep);
+  border-radius: 12px;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.card-base:hover {
+  border-color: rgba(79, 195, 247, 0.25);
+  box-shadow: 0 8px 32px rgba(79, 195, 247, 0.1);
+  transform: translateY(-4px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .section-wrapper {
+    padding: 72px 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

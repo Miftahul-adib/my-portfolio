@@ -1,0 +1,119 @@
+.projects-section {
+  background: var(--bg-base);
+}
+
+/* Filters */
+.projects__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 48px;
+}
+
+.projects__filter-pill {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  padding: 7px 20px;
+  border-radius: 20px;
+  border: 1px solid var(--border-deep);
+  color: var(--text-secondary);
+  background: transparent;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+
+.projects__filter-pill:hover {
+  border-color: rgba(79, 195, 247, 0.4);
+  color: var(--accent-blue);
+}
+
+.projects__filter-pill--active {
+  background: rgba(79, 195, 247, 0.12);
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+}
+
+/* Grid */
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.projects__card {
+  position: relative;
+}
+
+.projects__card-inner {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Featured badge */
+.projects__featured-badge {
+  display: inline-block;
+  background: rgba(214, 58, 249, 0.12);
+  border: 1px solid rgba(214, 58, 249, 0.3);
+  border-radius: 20px;
+  padding: 3px 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  color: var(--accent-magenta);
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+  align-self: flex-start;
+}
+
+.projects__category {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+  display: block;
+}
+
+.projects__name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text-primary);
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.projects__desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  flex: 1;
+  margin-bottom: 16px;
+}
+
+.projects__tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.projects__links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+  .projects__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 580px) {
+  .projects__grid {
+    grid-template-columns: 1fr;
+  }
+}
