@@ -81,7 +81,7 @@ export default function Hero() {
         <div className="hero-split__left-inner">
           <div className="hero-split__photo-wrapper">
             <img
-              src="/profile.jpeg"
+              src="/my-portfolio/profile.jpg"
               alt="Miftahul Alam Adib"
               className="hero-split__photo"
               onError={(e) => {
