@@ -2,12 +2,11 @@ import React, { useEffect, useState } from 'react'
 import './Navbar.css'
 
 const NAV_LINKS = [
-  { label: 'ABOUT', href: '#about' },
+  { label: 'ABOUT', href: '#top' },
   { label: 'RESEARCH', href: '#research' },
   { label: 'PROJECTS', href: '#projects' },
   { label: 'COMPETITIONS', href: '#competitions' },
   { label: 'SKILLS', href: '#skills' },
-  { label: 'GOALS', href: '#goals' },
   { label: 'CONTACT', href: '#contact' },
 ]
 
@@ -19,7 +18,6 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY
-      const coverHeight = window.innerHeight
 
       if (scrollY > 300) {
         if (!appeared) {
@@ -36,9 +34,8 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [appeared])
 
-  // Active section tracking
   useEffect(() => {
-    const sections = NAV_LINKS.map(l => l.href.replace('#', ''))
+    const ids = ['top', 'research', 'projects', 'competitions', 'skills', 'contact']
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach(entry => {
@@ -50,7 +47,7 @@ export default function Navbar() {
       { rootMargin: '-40% 0px -55% 0px' }
     )
 
-    sections.forEach(id => {
+    ids.forEach(id => {
       const el = document.getElementById(id)
       if (el) observer.observe(el)
     })

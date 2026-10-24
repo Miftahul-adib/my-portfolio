@@ -64,44 +64,37 @@ export default function Research() {
   const ref = useScrollReveal()
 
   return (
-    <section id="research" className="research-section">
+    <section id="research" className="page-section research-section">
+      <div className="page-section__sidebar" />
       <div className="section-wrapper" ref={ref}>
-        <div className="reveal section-label">RESEARCH</div>
-        <h2 className="reveal section-heading">Research Work</h2>
-        <p className="reveal section-intro">
-          Completed papers and ongoing investigations across healthcare AI, NLP, and clinical machine learning.
-        </p>
+        <span className="reveal section-label">Research</span>
 
-        {/* COMPLETED */}
-        <div className="reveal research__sub-label research__sub-label--published">COMPLETED</div>
+        <span className="reveal research__sub-label">Completed</span>
         <div className="research__papers">
           {PUBLISHED.map((p) => (
             <div key={p.num} className="reveal research__paper-card">
-              <div className="research__paper-inner">
-                <div className="research__paper-header">
-                  <span className="research__paper-num">{p.num}</span>
-                  <span className="research__paper-venue">{p.venue}</span>
-                </div>
-                <h3 className="research__paper-title">{p.title}</h3>
-                <p className="research__paper-plain">{p.plain}</p>
-                <div className="research__tags">
-                  {p.tags.map(t => <span key={t} className="tag-pill">{t}</span>)}
-                </div>
-                <div className="research__links">
-                  <a href={p.paper} target="_blank" rel="noopener noreferrer" className="link-pill">Paper ↗</a>
-                  <a href={p.code} target="_blank" rel="noopener noreferrer" className="link-pill">Code ↗</a>
-                </div>
+              <div className="research__paper-header">
+                <span className="research__paper-num">{p.num}</span>
+                <span className="research__paper-venue">{p.venue}</span>
+              </div>
+              <h3 className="research__paper-title">{p.title}</h3>
+              <p className="research__paper-plain">{p.plain}</p>
+              <div className="research__tags">
+                {p.tags.map(t => <span key={t} className="research__tag">{t}</span>)}
+              </div>
+              <div className="research__links">
+                <a href={p.paper} target="_blank" rel="noopener noreferrer" className="research__link">Paper ↗</a>
+                <a href={p.code} target="_blank" rel="noopener noreferrer" className="research__link">Code ↗</a>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Ongoing */}
-        <div className="reveal research__sub-label research__sub-label--ongoing">ONGOING</div>
+        <span className="reveal research__sub-label research__sub-label--ongoing">Ongoing</span>
         <div className="research__ongoing-grid">
           {ONGOING.map((o) => (
-            <div key={o.title} className="reveal research__ongoing-card card-base">
-              <div className="research__ongoing-status">IN PROGRESS</div>
+            <div key={o.title} className="reveal research__ongoing-card">
+              <span className="research__ongoing-status">In Progress</span>
               <div className="research__ongoing-domain">{o.domain}</div>
               <h3 className="research__ongoing-title">{o.title}</h3>
               <p className="research__ongoing-desc">{o.desc}</p>

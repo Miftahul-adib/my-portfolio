@@ -1,137 +1,80 @@
-.competitions-section {
-  background: var(--bg-base);
-}
+.competitions-section { background: var(--bg); }
 
-.comp__team-note {
-  font-size: 0.88rem;
-  color: var(--text-secondary);
-  opacity: 0.7;
-  font-style: italic;
-}
-
-/* Timeline */
-.comp__timeline {
-  position: relative;
-  padding-left: 40px;
-}
-
-.comp__line {
-  position: absolute;
-  left: 4px;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: linear-gradient(180deg, var(--accent-blue), var(--accent-magenta));
-  border-radius: 1px;
-}
+.comp__list { display: flex; flex-direction: column; }
 
 .comp__entry {
-  position: relative;
-  margin-bottom: 32px;
+  border-top: 1px solid var(--rule);
+  padding: 36px 0;
+  background: transparent;
 }
+.comp__entry:last-child { border-bottom: 1px solid var(--rule); }
 
-.comp__entry:last-child {
-  margin-bottom: 0;
-}
-
-/* Timeline dot */
-.comp__dot {
-  position: absolute;
-  left: -36px;
-  top: 24px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--bg-base);
-  border: 2px solid var(--accent-blue);
-  transform: scale(0);
-  transition: transform 0.3s ease, background 0.3s ease;
-}
-
-.comp__dot--visible {
-  transform: scale(1);
-  background: var(--accent-blue);
-}
-
-/* Card */
-.comp__card {
-  padding: 24px 28px;
-}
-
-.comp__card-header {
+.comp__header {
   display: flex;
-  align-items: flex-start;
   justify-content: space-between;
-  gap: 12px;
+  align-items: baseline;
   margin-bottom: 10px;
   flex-wrap: wrap;
+  gap: 8px;
 }
 
 .comp__organizer {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.72rem;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
   color: var(--text-secondary);
 }
 
 .comp__badge {
-  display: inline-block;
-  background: rgba(214, 58, 249, 0.1);
-  border: 1px solid var(--accent-magenta);
-  border-radius: 20px;
-  padding: 3px 12px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.72rem;
-  color: var(--accent-magenta);
-  white-space: nowrap;
-  flex-shrink: 0;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  color: var(--accent);
+  letter-spacing: 0.04em;
 }
 
 .comp__title {
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 600;
+  font-family: var(--font-display);
+  font-weight: 400;
   font-size: 1.05rem;
   color: var(--text-primary);
+  line-height: 1.45;
   margin-bottom: 6px;
-  line-height: 1.4;
 }
 
 .comp__team {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.82rem;
-  color: var(--accent-cyan);
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: var(--text-secondary);
   margin-bottom: 8px;
 }
 
 .comp__method {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.9rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 300;
   color: var(--text-secondary);
-  line-height: 1.65;
+  line-height: 1.7;
   margin-bottom: 14px;
 }
 
-.comp__tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-  margin-bottom: 14px;
+.comp__tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+
+.comp__tag {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 300;
+  color: var(--text-secondary);
+  border: 1px solid var(--rule);
+  padding: 2px 8px;
 }
 
-.comp__links {
-  display: flex;
-  gap: 10px;
+.comp__links { display: flex; gap: 14px; }
+
+.comp__link {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: var(--text-secondary);
+  transition: color 0.2s;
 }
-
-@media (max-width: 640px) {
-  .comp__timeline {
-    padding-left: 28px;
-  }
-
-  .comp__dot {
-    left: -24px;
-  }
-
-  .comp__card {
-    padding: 18px 20px;
-  }
-}
+.comp__link:hover { color: var(--text-primary); }

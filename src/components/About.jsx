@@ -6,7 +6,7 @@ const FACTS = [
   { label: 'Location', value: 'Sylhet, Bangladesh' },
   { label: 'Affiliation', value: 'Shahjalal University of Science and Technology' },
   { label: 'Position', value: 'Research Associate, Research Den (Remote, US)' },
-  { label: 'Published Papers', value: '3' },
+  { label: 'Completed Papers', value: '3' },
   { label: 'Ongoing Research', value: '5' },
 ]
 

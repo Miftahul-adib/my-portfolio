@@ -5,7 +5,6 @@ import './Projects.css'
 const PROJECTS = [
   {
     category: 'Tools & Systems',
-    featured: true,
     name: 'ScholarLink — Faculty Finder',
     desc: 'Semantic search platform enabling students to discover faculty and PhD researchers at SUST using natural language queries. 611+ faculty profiles indexed with vector embeddings.',
     tech: ['FastAPI', 'FAISS', 'HuggingFace', 'Python', 'Vercel'],
@@ -60,41 +59,29 @@ export default function Projects() {
   const ref = useScrollReveal()
 
   return (
-    <section id="projects" className="projects-section">
+    <section id="projects" className="page-section projects-section">
+      <div className="page-section__sidebar" />
       <div className="section-wrapper" ref={ref}>
-        <div className="reveal section-label">PROJECTS</div>
-        <h2 className="reveal section-heading">Selected Projects</h2>
-        <p className="reveal section-intro">
-          Systems, tools, and experiments — applied ML and NLP across health, language, and vision.
-        </p>
+        <span className="reveal section-label">Projects</span>
 
         <div className="projects__grid">
           {PROJECTS.map((p) => (
-            <div key={p.name} className="reveal projects__card card-base">
-              <div className="projects__card-inner">
-                {p.featured && (
-                  <span className="projects__featured-badge">FEATURED</span>
+            <div key={p.name} className="reveal projects__card">
+              <span className="projects__category">{p.category}</span>
+              <h3 className="projects__name">{p.name}</h3>
+              <p className="projects__desc">{p.desc}</p>
+              <div className="projects__tech">
+                {p.tech.map(t => (
+                  <span key={t} className="projects__tech-tag">{t}</span>
+                ))}
+              </div>
+              <div className="projects__links">
+                {p.live && (
+                  <a href={p.live} target="_blank" rel="noopener noreferrer" className="projects__link">Live ↗</a>
                 )}
-                <span className="projects__category">{p.category}</span>
-                <h3 className="projects__name">{p.name}</h3>
-                <p className="projects__desc">{p.desc}</p>
-                <div className="projects__tech">
-                  {p.tech.map(t => (
-                    <span key={t} className="tag-pill">{t}</span>
-                  ))}
-                </div>
-                <div className="projects__links">
-                  {p.live && (
-                    <a href={p.live} target="_blank" rel="noopener noreferrer" className="link-pill">
-                      Live ↗
-                    </a>
-                  )}
-                  {p.code && (
-                    <a href={p.code} target="_blank" rel="noopener noreferrer" className="link-pill">
-                      Code ↗
-                    </a>
-                  )}
-                </div>
+                {p.code && (
+                  <a href={p.code} target="_blank" rel="noopener noreferrer" className="projects__link">Code ↗</a>
+                )}
               </div>
             </div>
           ))}
