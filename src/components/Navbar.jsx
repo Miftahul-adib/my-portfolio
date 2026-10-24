@@ -3,6 +3,7 @@ import './Navbar.css'
 
 const NAV_LINKS = [
   { label: 'ABOUT', href: '#top' },
+  { label: 'EXPERIENCE', href: '#experience' },
   { label: 'RESEARCH', href: '#research' },
   { label: 'PROJECTS', href: '#projects' },
   { label: 'COMPETITIONS', href: '#competitions' },
@@ -18,7 +19,6 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY
-
       if (scrollY > 300) {
         if (!appeared) {
           setVisible(true)
@@ -29,38 +29,31 @@ export default function Navbar() {
         setVisible(false)
       }
     }
-
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [appeared])
 
   useEffect(() => {
-    const ids = ['top', 'research', 'projects', 'competitions', 'skills', 'contact']
+    const ids = ['top', 'experience', 'research', 'projects', 'competitions', 'skills', 'contact']
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            setActive(entry.target.id)
-          }
+          if (entry.isIntersecting) setActive(entry.target.id)
         })
       },
       { rootMargin: '-40% 0px -55% 0px' }
     )
-
     ids.forEach(id => {
       const el = document.getElementById(id)
       if (el) observer.observe(el)
     })
-
     return () => observer.disconnect()
   }, [])
 
   const handleClick = (e, href) => {
     e.preventDefault()
     const target = document.querySelector(href)
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' })
-    }
+    if (target) target.scrollIntoView({ behavior: 'smooth' })
   }
 
   return (
