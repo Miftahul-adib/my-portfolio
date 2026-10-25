@@ -8,6 +8,7 @@ const NAV_LINKS = [
   { label: 'PROJECTS', href: '#projects' },
   { label: 'COMPETITIONS', href: '#competitions' },
   { label: 'SKILLS', href: '#skills' },
+  { label: 'GOALS', href: '#goals' },
   { label: 'CONTACT', href: '#contact' },
 ]
 
@@ -34,7 +35,7 @@ export default function Navbar() {
   }, [appeared])
 
   useEffect(() => {
-    const ids = ['top', 'experience', 'research', 'projects', 'competitions', 'skills', 'contact']
+    const ids = ['top', 'experience', 'research', 'projects', 'competitions', 'skills', 'goals', 'contact']
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach(entry => {

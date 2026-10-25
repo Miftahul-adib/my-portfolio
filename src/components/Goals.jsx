@@ -1,5 +1,6 @@
 import React from 'react'
 import { useScrollReveal } from '../hooks/useScrollReveal'
+import './Goals.css'
 
 const GOALS = [
   {
@@ -8,15 +9,15 @@ const GOALS = [
   },
   {
     title: 'Machine Learning in Healthcare & Physical Science',
-    body: 'In healthcare, ML can reach patients that specialist care cannot — like predicting disease, flagging risk, making the invisible visible in clinical data. In physical science, the laws are known but the patterns are not, and models that respect domain constraints while discovering what lies beyond human intuition are some of the most interesting things you can build.',
+    body: 'In healthcare, ML can reach patients that specialist care cannot — predicting disease, flagging risk, making the invisible visible in clinical data. In physical science, the laws are known but the patterns are not, and models that respect domain constraints while discovering what lies beyond human intuition are some of the most interesting things you can build.',
   },
   {
     title: 'Faculty Finder',
-    body: "I'm working on a goal to build a platform for PhD aspirants to find professors whose research aligns with their interests.",
+    body: "I am working on a platform for PhD aspirants to find professors whose research aligns with their interests.",
   },
   {
     title: 'Agentic AI & LLMs',
-    body: 'Building and studying autonomous LLM-based systems that can plan, use tools, and act across multi-step tasks — with a genuine interest in where these systems work, where they fail, and why.',
+    body: 'Building and studying autonomous LLM-based systems that can plan, use tools, and act across multi-step tasks, with a genuine interest in where these systems work, where they fail, and why.',
   },
 ]
 
@@ -24,15 +25,15 @@ export default function Goals() {
   const ref = useScrollReveal()
 
   return (
-    <section id="goals" className="about-section">
+    <section id="goals" className="page-section">
+      <div className="page-section__sidebar" />
       <div className="section-wrapper" ref={ref}>
-        <div className="reveal section-label">GOALS</div>
-        <h2 className="reveal section-heading">What I'm Working Towards</h2>
-        <div className="about__goals-grid" style={{ marginTop: '0' }}>
+        <span className="reveal section-label">Goals</span>
+        <div className="goals__grid">
           {GOALS.map((g) => (
-            <div key={g.title} className="reveal card-base about__goal-card">
-              <h4 className="about__goal-title">{g.title}</h4>
-              <p className="about__goal-body">{g.body}</p>
+            <div key={g.title} className="reveal goals__card">
+              <h4 className="goals__title">{g.title}</h4>
+              <p className="goals__body">{g.body}</p>
             </div>
           ))}
         </div>

@@ -1,0 +1,56 @@
+.goals__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+}
+
+.goals__card {
+  padding: 32px 24px 32px 0;
+  border-top: 1px solid var(--rule);
+}
+
+.goals__card:nth-child(even) {
+  border-left: 1px solid var(--rule);
+  padding-left: 24px;
+  padding-right: 0;
+}
+
+.goals__card:nth-last-child(-n+2) {
+  border-bottom: 1px solid var(--rule);
+}
+
+.goals__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.goals__body {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .goals__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .goals__card:nth-child(even) {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .goals__card:nth-last-child(-n+2) {
+    border-bottom: none;
+  }
+
+  .goals__card:last-child {
+    border-bottom: 1px solid var(--rule);
+  }
+}
