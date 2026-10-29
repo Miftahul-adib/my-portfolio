@@ -29,8 +29,13 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Install Chromium for react-snap
+        run: npx puppeteer browsers install chrome
+
       - name: Build
-        run: npm run build
+        run: npx vite build && npx react-snap
+        env:
+          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: false
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
