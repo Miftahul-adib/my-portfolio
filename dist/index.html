@@ -225,13 +225,14 @@ h2 { margin: 0; font: 600 clamp(26px, 3.2vw, 36px)/1.1 var(--serif); letter-spac
   display: grid; grid-template-columns: 88px minmax(0,1fr) 120px;
   gap: 18px; padding: 20px 0;
   border-bottom: 1px solid var(--line);
-  align-items: center;
+  align-items: start;
 }
 .competition:first-child { border-top: 1px solid var(--line); }
 .rank { color: var(--crimson); font: 700 21px var(--serif); line-height: 1.1; }
 .rank small { display: block; margin-top: 4px; color: var(--faint); font: 9px var(--mono); letter-spacing: .05em; text-transform: uppercase; }
 .competition h3 { margin: 0; font: 600 15px/1.4 var(--serif); color: var(--navy); }
-.competition p { margin: 4px 0 0; color: var(--muted); font-size: 12.5px; line-height: 1.68; }
+.comp-org { margin: 5px 0 3px; color: var(--navy-2); font: 600 11.5px var(--sans); line-height: 1.5; }
+.comp-desc { margin: 0; color: var(--muted); font-size: 12.5px; line-height: 1.68; }
 .competition .comp-link { justify-self: end; }
 
 /* EXPERIENCE / EDUCATION */
@@ -593,7 +594,8 @@ h2 { margin: 0; font: 600 clamp(26px, 3.2vw, 36px)/1.1 var(--serif); letter-spac
       <div class="rank">4th<small>Place</small></div>
       <div>
         <h3>Bangla Dialect Speech Recognition</h3>
-        <p>Shobdotori · AIFication · Team BackpropSust. Dual-stage fine-tuning using Whisper Medium and LoRA for dialect-aware Bangla speech recognition.</p>
+        <p class="comp-org">Shobdotori · AIFication · Team BackpropSust.</p>
+        <p class="comp-desc">Dual-stage fine-tuning using Whisper Medium and LoRA for dialect-aware Bangla speech recognition.</p>
       </div>
       <a class="text-link comp-link" href="https://github.com/Miftahul-adib/AIFication-4th-Place-Solution-BackpropSust" rel="noopener" target="_blank">Solution ↗</a>
     </article>
@@ -601,7 +603,8 @@ h2 { margin: 0; font: 600 clamp(26px, 3.2vw, 36px)/1.1 var(--serif); letter-spac
       <div class="rank">4th<small>Online track</small></div>
       <div>
         <h3>Khata — Whiteboard-to-Practice Pipeline</h3>
-        <p>Build With Gemma @ Bangladesh 2026 · Kaggle · Google DeepMind · Team BackpropSust. Gemma-powered pipeline that converts whiteboard photos into structured board-exam practice questions.</p>
+        <p class="comp-org">Build With Gemma @ Bangladesh 2026 · Kaggle · Google DeepMind · Team BackpropSust.</p>
+        <p class="comp-desc">Gemma-powered pipeline that converts whiteboard photos into structured board-exam practice questions.</p>
       </div>
       <a class="text-link comp-link" href="https://www.kaggle.com/competitions/build-with-gemma-bangladesh/writeups/new-writeup-1785044974927" rel="noopener" target="_blank">Write-up ↗</a>
     </article>
@@ -609,7 +612,8 @@ h2 { margin: 0; font: 600 clamp(26px, 3.2vw, 36px)/1.1 var(--serif); letter-spac
       <div class="rank">Top 15<small>of 101 teams</small></div>
       <div>
         <h3>RoadVision — Vehicle Detection</h3>
-        <p>DUET AI Hackathon · Team BackpropSust. YOLOv8-based multi-class vehicle detection trained on Bangladesh highway CCTV footage.</p>
+        <p class="comp-org">DUET AI Hackathon · Team BackpropSust.</p>
+        <p class="comp-desc">YOLOv8-based multi-class vehicle detection trained on Bangladesh highway CCTV footage.</p>
       </div>
       <a class="text-link comp-link" href="https://github.com/Miftahul-adib/Duet-AI-Hackathon-solution" rel="noopener" target="_blank">Solution ↗</a>
     </article>
@@ -624,15 +628,16 @@ h2 { margin: 0; font: 600 clamp(26px, 3.2vw, 36px)/1.1 var(--serif); letter-spac
         <div class="rank">Final<small>Round</small></div>
         <div>
           <h3>SkinAI — Rural Healthcare Access</h3>
-          <p>Infinity AI Buildfest · BRAC University · Team Paradox. Platform connecting rural patients in Bangladesh with nearby doctors, with skin-condition prediction from uploaded images. Selected for both the preliminary and final Healthcare track rounds.</p>
+          <p class="comp-org">Infinity AI Buildfest · BRAC University · Team Paradox.</p>
+          <p class="comp-desc">Platform connecting rural patients in Bangladesh with nearby doctors, with skin-condition prediction from uploaded images. Selected for both the preliminary and final rounds.</p>
         </div>
-        <span class="small-note">Healthcare track</span>
       </article>
       <article class="competition">
         <div class="rank">20th<small>of 151 teams</small></div>
         <div>
           <h3>PoliMemeDecode — Political Meme Classification</h3>
-          <p>National Datathon · Team BackpropSust. DeBERTa-v3 and RoBERTa combined with YOLO logo detection and InsightFace for multimodal classification.</p>
+          <p class="comp-org">National Datathon · Team BackpropSust.</p>
+          <p class="comp-desc">DeBERTa-v3 and RoBERTa combined with YOLO logo detection and InsightFace for multimodal classification.</p>
         </div>
         <a class="text-link comp-link" href="https://github.com/Miftahul-adib/PoliMemeDecode" rel="noopener" target="_blank">Solution ↗</a>
       </article>
