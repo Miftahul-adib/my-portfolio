@@ -1,159 +1,773 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/my-portfolio/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Miftahul Alam Adib — Machine Learning Researcher</title>
-    <meta name="description" content="Miftahul Alam Adib — ML researcher with published papers in healthcare AI, Bengali NLP, and indoor localization (arXiv, JSTAGE). Statistics undergraduate at SUST. Research Associate at Research Den." />
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<meta content="#F5ECE6" name="theme-color"/>
+<meta name="description" content="Miftahul Alam Adib is a Statistics undergraduate at SUST. His primary research interest is machine learning in healthcare, with broader work across low-resource NLP, speech technologies, computer vision, statistical modelling, information retrieval, and applied AI systems."/>
+<meta property="og:title" content="Miftahul Alam Adib — Statistical Learning &amp; Applied AI"/>
+<meta property="og:description" content="Miftahul Alam Adib is a Statistics undergraduate exploring machine learning in healthcare and applied AI across multiple domains."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://miftahul-adib.github.io/my-portfolio/"/>
+<title>Miftahul Alam Adib | Statistical Learning &amp; Applied AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Syne:wght@400;500;600;700;800&family=Fira+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  /* palette */
+  --bg:       #F5ECE6;
+  --bg-2:     #edddd4;
+  --surface:  #fdf7f4;
+  --navy:     #1D2230;
+  --navy-2:   #2d3460;
+  --muted:    #363E52;
+  --faint:    #7a8099;
+  --crimson:  #BC1C32;
+  --crimson-2:#d42045;
+  --line:     #ddd0c8;
+  --line-2:   #c8b9b0;
+  /* type */
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans:  'Syne', ui-sans-serif, system-ui, sans-serif;
+  --mono:  'Fira Mono', 'SFMono-Regular', Consolas, monospace;
+  --max: 1120px;
+  --r: 8px;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 66px; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--navy);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+a:focus-visible, summary:focus-visible { outline: 2px solid var(--crimson); outline-offset: 3px; border-radius: 3px; }
+.shell { width: min(var(--max), calc(100% - 52px)); margin: 0 auto; }
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Miftahul Alam Adib — Machine Learning Researcher" />
-    <meta property="og:description" content="ML researcher. Published work in healthcare AI, NLP, and localization. Statistics @ SUST. Research Associate @ Research Den." />
-    <meta property="og:url" content="https://miftahul-adib.github.io/my-portfolio/" />
-    <meta property="og:type" content="profile" />
+/* NAV */
+.topbar {
+  position: sticky; top: 0; z-index: 20;
+  background: rgba(245,236,230,.93);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+.nav { min-height: 62px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.brand { text-decoration: none; }
+.brand-name { font: 700 13px var(--sans); letter-spacing: .04em; color: var(--navy); }
+.navlinks { display: flex; flex-wrap: wrap; align-items: center; gap: 22px; }
+.navlinks a { color: var(--muted); font: 500 11.5px var(--sans); letter-spacing: .03em; text-decoration: none; transition: color .14s; }
+.navlinks a:hover { color: var(--crimson); }
+.navlinks .nav-contact { color: var(--crimson); font-weight: 700; }
+.navlinks .nav-contact:hover { color: var(--crimson-2); }
 
-    <!-- Structured data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Miftahul Alam Adib",
-      "jobTitle": "Machine Learning Researcher",
-      "description": "ML researcher working on healthcare AI, Bengali NLP, indoor localization, and CGM forecasting. Statistics undergraduate at SUST. Research Associate at Research Den.",
-      "url": "https://miftahul-adib.github.io/my-portfolio/",
-      "email": "miftahuladib04@gmail.com",
-      "affiliation": [
-        {
-          "@type": "CollegeOrUniversity",
-          "name": "Shahjalal University of Science and Technology",
-          "alternateName": "SUST"
-        },
-        {
-          "@type": "Organization",
-          "name": "Research Den"
-        }
-      ],
-      "sameAs": [
-        "https://scholar.google.com/citations?hl=en&user=3UH7xHsAAAAJ",
-        "https://github.com/Miftahul-adib",
-        "https://www.linkedin.com/in/miftahul-alam-adib/",
-        "https://www.kaggle.com/miftahuladib"
-      ]
-    }
-    </script>
+/* HERO */
+.hero { padding: 92px 0 72px; }
+.hero-grid { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 48px; align-items: start; }
+h1 {
+  margin: 0;
+  font: 600 clamp(50px, 7.5vw, 86px)/1.0 var(--serif);
+  letter-spacing: -.025em;
+  color: var(--navy);
+}
+.role { margin: 18px 0 0; color: var(--muted); font: 500 15.5px var(--sans); letter-spacing: -.01em; }
+.intro { max-width: 680px; margin: 18px 0 0; color: var(--muted); font-size: 14.5px; line-height: 1.82; }
+.hero-aside { display: flex; flex-direction: column; align-items: flex-start; }
+.hero-photo {
+  width: 200px;
+  aspect-ratio: 3/4;
+  border-radius: var(--r);
+  background: var(--bg-2);
+  border: 1.5px solid var(--line-2);
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 8px;
+  color: var(--faint);
+  font: 9.5px var(--mono); letter-spacing: .07em; text-transform: uppercase;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.hero-photo svg { opacity: .35; }
+.hero-info {
+  display: flex; flex-wrap: wrap; gap: 0 32px;
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+  color: var(--muted); font-size: 12px;
+}
+.hero-info-item { min-width: 140px; }
+.hero-info .aside-label { color: var(--faint); font: 500 9.5px var(--mono); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 5px; display: block; }
+.hero-info strong { display: block; color: var(--navy); font: 600 13px var(--sans); line-height: 1.5; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 26px; }
+.button {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 9px 16px; min-height: 40px;
+  border: 1.5px solid var(--line-2);
+  border-radius: var(--r);
+  font: 600 11px var(--sans);
+  letter-spacing: .03em;
+  text-decoration: none;
+  color: var(--navy);
+  background: var(--surface);
+  transition: border-color .14s, background .14s, color .14s;
+}
+.button:hover { border-color: var(--crimson); color: var(--crimson); background: var(--bg); }
+.button.primary { background: var(--crimson); border-color: var(--crimson); color: #fff; }
+.button.primary:hover { background: var(--crimson-2); border-color: var(--crimson-2); color: #fff; }
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-    <script type="module" crossorigin src="/my-portfolio/assets/index-McDPtQOc.js"></script>
-    <link rel="stylesheet" crossorigin href="/my-portfolio/assets/index-M4Bjy_UP.css">
-  </head>
-  <body>
-    <noscript>
-      <h1>Miftahul Alam Adib</h1>
-      <p>Machine Learning Researcher. Statistics undergraduate at SUST, Sylhet, Bangladesh. Research Associate at Research Den (Remote, US).</p>
-      <p>Email: miftahuladib04@gmail.com</p>
+/* SECTION */
+.section { padding: 60px 0; border-top: 1px solid var(--line); }
+.section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; margin-bottom: 28px; }
+.section-title-wrap { display: flex; align-items: baseline; gap: 14px; }
+h2 { margin: 0; font: 600 clamp(26px, 3.2vw, 36px)/1.1 var(--serif); letter-spacing: -.02em; color: var(--navy); }
+.section-note { color: var(--faint); font: 9.5px var(--mono); letter-spacing: .07em; text-transform: uppercase; }
+.section-lede { max-width: 680px; margin: -10px 0 24px 0; color: var(--muted); font-size: 14px; }
 
-      <h2>Research — Published</h2>
+/* FOCUS */
+.focus-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 14px; }
+.focus-panel {
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: var(--r);
+  padding: 26px 28px;
+  min-height: 180px;
+}
+.focus-panel.primary-focus { background: var(--navy); border-color: var(--navy); }
+.micro { display: block; font: 500 9px var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--faint); margin-bottom: 14px; }
+.primary-focus .micro { color: rgba(255,255,255,.45); }
+.focus-panel h3 { margin: 0; font: 600 21px/1.25 var(--serif); color: var(--navy); }
+.primary-focus h3 { color: #fff; }
+.focus-panel p { margin: 10px 0 0; color: var(--muted); font-size: 13px; }
+.primary-focus p { color: rgba(255,255,255,.65); }
+.domain-list { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 16px; }
+.domain {
+  display: inline-flex; align-items: center;
+  padding: 5px 10px;
+  background: var(--bg);
+  border: 1.5px solid var(--line);
+  border-radius: 4px;
+  color: var(--navy-2);
+  font: 600 11px var(--sans);
+}
 
-      <h3>A Dual Pipeline Machine Learning Framework for Automated Multi-Class Sleep Disorder Screening Using Hybrid Resampling and Ensemble Learning</h3>
-      <p>arXiv · 2025 · Tags: Ensemble Learning, Healthcare, Class Imbalance, Screening</p>
-      <p>Paper: https://arxiv.org/abs/2601.05814</p>
-      <p>Code: https://github.com/Miftahul-adib/sleep-disorder</p>
+/* WORK LIST */
+.work-list { }
+.work-item {
+  display: grid; grid-template-columns: minmax(0,1fr) 145px;
+  gap: 18px; padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+  align-items: start;
+}
+.work-item:first-child { border-top: 1px solid var(--line); }
+.work-content h3 { margin: 0; font: 600 17px/1.38 var(--serif); letter-spacing: -.01em; color: var(--navy); }
+.work-content p { margin: 8px 0 0; color: var(--muted); font-size: 13.5px; line-height: 1.78; max-width: 720px; }
+.work-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 7px 12px; margin-top: 12px; }
+.tag {
+  display: inline-flex;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 3px 7px;
+  color: var(--faint);
+  font: 9px var(--mono); letter-spacing: .06em; text-transform: uppercase;
+}
+.venue { display: inline-block; color: var(--navy-2); font: 600 12px var(--sans); line-height: 1.6; }
+.venue em { font-style: italic; }
+.secondary-venue { color: var(--muted); font-weight: 400; }
+.work-links { display: flex; flex-direction: column; gap: 9px; align-items: flex-start; padding-top: 3px; }
+.text-link { display: inline-flex; align-items: center; gap: 5px; color: var(--crimson); font: 600 11.5px var(--sans); text-decoration: none; transition: color .13s; }
+.text-link:hover { color: var(--crimson-2); text-decoration: underline; text-underline-offset: 3px; }
+.text-link.muted-link { color: var(--muted); }
+.text-link.muted-link:hover { color: var(--navy); }
+.small-note { color: var(--faint); font: 10px var(--sans); }
 
-      <h3>A Coverage Preserving Ensemble Framework with Minority Recovery for Robust Indoor Localization</h3>
-      <p>IJABC · JSTAGE · 2026 · Tags: Indoor Localization, Ensemble Learning, Minority Recovery, Coverage</p>
-      <p>Paper: https://www.jstage.jst.go.jp/article/ijabc/2026/2/2026_160/_article</p>
-      <p>Code: https://github.com/Miftahul-adib/Coverage-preserving-localization</p>
+/* EXPANDABLE — JS-driven, no <details> quirk */
+.expand-btn {
+  display: flex; align-items: center; gap: 8px;
+  margin-top: 0; padding: 15px 0;
+  border: none; background: none; cursor: pointer;
+  color: var(--crimson); font: 600 11px var(--sans); letter-spacing: .04em;
+  border-top: 1px solid var(--line);
+  width: 100%;
+  text-align: left;
+  transition: color .13s;
+}
+.expand-btn:hover { color: var(--crimson-2); }
+.expand-btn .btn-icon { font-size: 16px; font-weight: 300; line-height: 1; margin-left: auto; transition: transform .2s; }
+.expand-btn[aria-expanded="true"] .btn-icon { transform: rotate(45deg); }
+.expandable-content { display: none; }
+.expandable-content.open { display: block; }
 
-      <h3>Explainable Machine Learning for Chronic Kidney Disease Classification from Routine Urinalysis and Diabetes Records</h3>
-      <p>ResearchSquare · Preprint · Tags: Explainable AI, CKD, Healthcare, SHAP, LIME</p>
-      <p>Paper: https://www.researchsquare.com/article/rs-10968179/v1</p>
-      <p>Code: https://github.com/Munfa/CKD-Explainable-AI</p>
+/* PROJECTS */
+.project-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 13px; }
+.project-card {
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: var(--r);
+  padding: 22px;
+  display: flex; flex-direction: column; min-height: 235px;
+  transition: border-color .15s;
+}
+.project-card:hover { border-color: var(--crimson); }
+.project-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.project-category { font: 700 9.5px var(--mono); color: var(--crimson); text-transform: uppercase; letter-spacing: .1em; }
+.project-card h3 { margin: 0; font: 600 17px/1.35 var(--serif); letter-spacing: -.01em; color: var(--navy); }
+.project-card p { color: var(--muted); margin: 8px 0 12px; font-size: 13px; line-height: 1.75; }
+.stack { display: flex; flex-wrap: wrap; gap: 5px; margin-top: auto; padding-top: 5px; }
+.stack span { color: var(--muted); background: var(--bg); border: 1px solid var(--line); border-radius: 3px; padding: 3px 7px; font: 9px var(--mono); }
+.project-actions { display: flex; gap: 14px; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line); }
 
-      <h2>Research — Ongoing</h2>
+/* COMPETITIONS */
+.competition-list { }
+.competition {
+  display: grid; grid-template-columns: 88px minmax(0,1fr) 120px;
+  gap: 18px; padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+  align-items: center;
+}
+.competition:first-child { border-top: 1px solid var(--line); }
+.rank { color: var(--crimson); font: 700 21px var(--serif); line-height: 1.1; }
+.rank small { display: block; margin-top: 4px; color: var(--faint); font: 9px var(--mono); letter-spacing: .05em; text-transform: uppercase; }
+.competition h3 { margin: 0; font: 600 15px/1.4 var(--serif); color: var(--navy); }
+.competition p { margin: 4px 0 0; color: var(--muted); font-size: 12.5px; line-height: 1.68; }
+.competition .comp-link { justify-self: end; }
 
-      <h3>Natural Hazard Exposure and Child Literacy in Bangladesh</h3>
-      <p>Education · Public Health. MICS 2025 dataset. Examining whether natural hazard exposure affects reading and numeracy in children aged 7–14.</p>
+/* EXPERIENCE / EDUCATION */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 42px; }
+.subheading { display: flex; align-items: center; gap: 10px; margin: 0 0 20px; font: 700 9.5px var(--mono); color: var(--faint); letter-spacing: .1em; text-transform: uppercase; }
+.timeline { border-left: 2px solid var(--line-2); margin-left: 5px; padding-left: 20px; }
+.timeline-entry { position: relative; padding: 0 0 26px; }
+.timeline-entry:last-child { padding-bottom: 0; }
+.timeline-entry::before { content: ''; position: absolute; left: -25px; top: 6px; width: 8px; height: 8px; border-radius: 50%; background: var(--bg); border: 2px solid var(--crimson); }
+.timeline-date { color: var(--faint); font: 9.5px var(--mono); letter-spacing: .07em; text-transform: uppercase; }
+.timeline-entry h3 { margin: 5px 0 3px; font: 600 16.5px/1.35 var(--serif); color: var(--navy); }
+.timeline-org { color: var(--crimson); font: 600 12px var(--sans); }
+.timeline-entry p { margin: 7px 0 0; color: var(--muted); font-size: 12.5px; line-height: 1.78; }
+.timeline-entry ul { margin: 7px 0 0; padding-left: 16px; color: var(--muted); font-size: 12px; line-height: 1.8; }
 
-      <h3>SYMTOLOGY: Code-Mixed Mental Health Dataset</h3>
-      <p>NLP · Mental Health. Synthetic Bengali–English code-mixed dataset for mental health using ontology-driven prompting.</p>
+/* FUTURE */
+.future-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 13px; }
+.future-card {
+  padding: 22px;
+  border: 1.5px solid var(--line);
+  border-radius: var(--r);
+  background: var(--surface);
+  transition: border-color .15s;
+}
+.future-card:hover { border-color: var(--navy-2); }
+.future-card h3 { margin: 0 0 10px; font: 600 16px/1.35 var(--serif); color: var(--navy); }
+.future-card p { color: var(--muted); font-size: 13px; line-height: 1.75; margin: 0; }
 
-      <h3>CGM Forecasting Sensitivity Analysis</h3>
-      <p>Healthcare AI · CGM. Systematic analysis of short-term blood glucose forecasting model sensitivity to evaluation protocol and input window length.</p>
+/* SKILLS */
+.skills-wrap { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); column-gap: 36px; }
+.skill-row { padding: 16px 0; border-top: 1px solid var(--line); }
+.skill-row h3 { margin: 0 0 6px; font: 700 13px var(--sans); color: var(--navy); }
+.skill-row p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.85; }
 
-      <h3>Cross-Population CGM Forecasting</h3>
-      <p>Healthcare AI · CGM. Leakage-controlled evaluation framework for CGM model generalization across patient populations.</p>
+/* ABOUT */
+.about-copy { color: var(--muted); font-size: 14.5px; line-height: 1.92; max-width: 760px; }
+.about-copy p { margin: 0 0 14px; }
+.about-copy p:last-child { margin-bottom: 0; }
 
-      <h3>Three-Dataset CKD Harmonization</h3>
-      <p>Healthcare AI · CKD. Harmonizing three CKD datasets for cross-dataset validation and explainable ML.</p>
+/* CONTACT FOOTER */
+.contact { background: var(--navy); color: #fff; padding: 64px 0 36px; }
+.contact h2 { color: #fff; font-size: clamp(32px, 5vw, 52px); }
+.contact .contact-lede { color: rgba(255,255,255,.55); max-width: 560px; margin: 14px 0 24px; font-size: 14px; }
+.contact-links { display: flex; flex-wrap: wrap; gap: 8px; }
+.contact-links a { color: rgba(255,255,255,.8); border: 1px solid rgba(255,255,255,.2); border-radius: var(--r); padding: 8px 14px; font: 600 12px var(--sans); text-decoration: none; transition: background .14s, border-color .14s, color .14s; }
+.contact-links a:hover { background: var(--crimson); border-color: var(--crimson); color: #fff; }
+.footer-line { display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; padding-top: 26px; margin-top: 48px; border-top: 1px solid rgba(255,255,255,.1); color: rgba(255,255,255,.28); font: 9.5px var(--mono); text-transform: uppercase; letter-spacing: .07em; }
+.back-top { color: rgba(255,255,255,.4); text-decoration: none; transition: color .13s; }
+.back-top:hover { color: rgba(255,255,255,.8); }
 
-      <h2>Projects</h2>
+/* RESPONSIVE */
+@media (max-width: 860px) {
+  .shell { width: min(calc(100% - 38px), var(--max)); }
+  .nav { align-items: flex-start; padding: 14px 0; flex-direction: column; gap: 12px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 22px; }
+  .hero-photo { width: 150px; }
+  .focus-grid { grid-template-columns: 1fr; }
+  .future-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 620px) {
+  .shell { width: calc(100% - 32px); }
+  .navlinks { width: 100%; overflow-x: auto; flex-wrap: nowrap; padding-bottom: 2px; }
+  .navlinks a { white-space: nowrap; font-size: 10.5px; }
+  .hero { padding: 58px 0 48px; }
+  .role { font-size: 13.5px; }
+  .intro { font-size: 14px; }
+  .section { padding: 48px 0; }
+  .section-head { flex-direction: column; gap: 6px; margin-bottom: 20px; }
+  .work-item { grid-template-columns: 1fr; gap: 10px; padding: 20px 0; }
+  .work-links { flex-direction: row; flex-wrap: wrap; }
+  .project-grid { grid-template-columns: 1fr; }
+  .project-card { min-height: 0; }
+  .competition { grid-template-columns: 72px minmax(0,1fr); gap: 12px; }
+  .competition .comp-link { grid-column: 2; justify-self: start; }
+  .two-col { grid-template-columns: 1fr; gap: 36px; }
+  .future-grid { grid-template-columns: 1fr; }
+  .skills-wrap { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
+</style>
+</head>
+<body>
 
+<header class="topbar">
+<div class="shell nav">
+  <a class="brand" href="#home"><span class="brand-name">Miftahul Alam Adib</span></a>
+  <nav aria-label="Main navigation" class="navlinks">
+    <a href="#research-focus">Research Focus</a>
+    <a href="#research">Research</a>
+    <a href="#projects">Projects</a>
+    <a href="#competitions">Competitions</a>
+    <a href="#experience">Experience</a>
+    <a href="#future">Future Directions</a>
+    <a href="#about">Thoughts</a>
+    <a class="nav-contact" href="#contact">Contact ↗</a>
+  </nav>
+</div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+<div class="shell">
+  <div class="hero-grid">
+    <div>
+      <h1>Miftahul Alam Adib.</h1>
+      <p class="role">Statistics Undergraduate &nbsp;/&nbsp; Machine Learning &amp; Applied AI</p>
+      <p class="intro">Machine learning in healthcare is my primary focus, but I remain curious about interesting problems across other areas of science and technology. I like collaborating, experimenting with ideas and learning from different perspectives. I also like taking ideas beyond the experiment stage and turning them into practical systems.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="cv.pdf" target="_blank">Download CV ↗</a>
+        <a class="button" href="https://scholar.google.com/citations?hl=en&user=3UH7xHsAAAAJ" rel="noopener" target="_blank">Google Scholar ↗</a>
+        <a class="button" href="https://github.com/Miftahul-adib" rel="noopener" target="_blank">GitHub ↗</a>
+      </div>
+      <div class="hero-info">
+        <div class="hero-info-item">
+          <div class="aside-label">Current affiliation</div>
+          <strong>Statistics<br/>Shahjalal University of Science and Technology</strong>
+        </div>
+        <div class="hero-info-item">
+          <div class="aside-label">Research experience</div>
+          <strong>Research Associate<br/>Research Den</strong>
+        </div>
+        <div class="hero-info-item">
+          <div class="aside-label">Based in</div>
+          <strong>Sylhet, Bangladesh</strong>
+        </div>
+      </div>
+    </div>
+    <aside class="hero-aside">
+      <img src="profile.jpeg" alt="Miftahul Alam Adib" class="hero-photo" style="object-fit:cover;">
+    </aside>
+  </div>
+</div>
+</section>
+
+<section class="section" id="research-focus">
+<div class="shell">
+  <div class="section-head">
+    <div class="section-title-wrap"><h2>Research Focus</h2></div>
+  </div>
+  <div class="focus-grid">
+    <article class="focus-panel primary-focus">
+      <span class="micro">Primary research interest</span>
+      <h3>Machine Learning<br/>in Healthcare</h3>
+      <p>Building clinically meaningful, interpretable models for disease screening, patient stratification and forecasting.</p>
+    </article>
+    <article class="focus-panel">
+      <span class="micro">Other areas represented in my work</span>
+      <div class="domain-list">
+        <span class="domain">Low-Resource NLP</span>
+        <span class="domain">Computer Vision</span>
+        <span class="domain">Public Health Statistics</span>
+        <span class="domain">RAG</span>
+        <span class="domain">Applied AI Systems</span>
+        <span class="domain">Explainable AI</span>
+      </div>
+    </article>
+  </div>
+</div>
+</section>
+
+<section class="section" id="research">
+<div class="shell">
+  <div class="section-head">
+    <div class="section-title-wrap"><h2>Research</h2></div>
+  </div>
+  <div class="work-list" id="research-list">
+    <article class="work-item">
+      <div class="work-content">
+        <h3>A Dual Pipeline Machine Learning Framework for Automated Multi-Class Sleep Disorder Screening Using Hybrid Resampling and Ensemble Learning</h3>
+        <p>Designed a two-stage ML pipeline for automatically detecting sleep disorders, addressing severe class imbalance through hybrid resampling and combining multiple classifiers to improve reliability across disorder categories.</p>
+        <div class="work-meta">
+          <span class="venue">Accepted by <em>Social Network Analysis and Mining</em> &nbsp;·&nbsp; Springer Nature &nbsp;·&nbsp; 2026</span>
+          <span class="tag">Ensemble Learning</span><span class="tag">Healthcare</span><span class="tag">Class Imbalance</span><span class="tag">Screening</span>
+        </div>
+      </div>
+      <div class="work-links">
+        <a class="text-link" href="https://arxiv.org/abs/2601.05814" rel="noopener" target="_blank">Manuscript ↗</a>
+        <a class="text-link muted-link" href="https://github.com/Miftahul-adib/sleep-disorder" rel="noopener" target="_blank">Repository ↗</a>
+      </div>
+    </article>
+    <article class="work-item">
+      <div class="work-content">
+        <h3>A Coverage-Preserving Ensemble Framework with Minority Recovery for Robust Indoor Localization</h3>
+        <p>Proposed an ensemble-based localization system that maintains coverage across the full indoor space while recovering accuracy for underrepresented zones — a common failure mode in WiFi fingerprinting systems.</p>
+        <div class="work-meta">
+          <span class="venue"><em>International Journal of Activity and Behavior Computing</em> &nbsp;·&nbsp; 2026</span>
+          <span class="venue secondary-venue">Presented at ABC 2026 &nbsp;·&nbsp; Activity and Behavior Computing Conference</span>
+          <span class="tag">Indoor Localization</span><span class="tag">Ensemble Learning</span><span class="tag">Minority Recovery</span>
+        </div>
+      </div>
+      <div class="work-links">
+        <a class="text-link" href="https://www.jstage.jst.go.jp/article/ijabc/2026/2/2026_160/_article" rel="noopener" target="_blank">Read paper ↗</a>
+        <a class="text-link muted-link" href="https://github.com/Miftahul-adib/Coverage-preserving-localization" rel="noopener" target="_blank">Repository ↗</a>
+      </div>
+    </article>
+    <article class="work-item">
+      <div class="work-content">
+        <h3>Explainable Machine Learning for Chronic Kidney Disease Classification from Routine Urinalysis and Diabetes Records</h3>
+        <p>Built an interpretable ML pipeline for CKD classification using routine clinical tests, applying SHAP and LIME to make model decisions transparent and clinically actionable.</p>
+        <div class="work-meta">
+          <span class="tag">Explainable AI</span><span class="tag">CKD</span><span class="tag">Healthcare</span><span class="tag">SHAP &amp; LIME</span>
+        </div>
+      </div>
+      <div class="work-links">
+        <a class="text-link" href="https://www.researchsquare.com/article/rs-10968179/v1" rel="noopener" target="_blank">Read preprint ↗</a>
+        <a class="text-link muted-link" href="https://github.com/Munfa/CKD-Explainable-AI" rel="noopener" target="_blank">Repository ↗</a>
+      </div>
+    </article>
+  </div>
+</div>
+</section>
+
+<section class="section" id="ongoing">
+<div class="shell">
+  <div class="section-head">
+    <div class="section-title-wrap"><h2>Ongoing Research</h2></div>
+  </div>
+  <div class="work-list">
+    <article class="work-item">
+      <div class="work-content">
+        <h3>Cross-Population CGM Forecasting</h3>
+        <p>Building a leakage-controlled evaluation framework to test whether short-term continuous glucose monitoring forecasting models generalize across different patient populations.</p>
+        <div class="work-meta"><span class="tag">Healthcare AI</span><span class="tag">CGM</span><span class="tag">Generalization</span></div>
+      </div>
+    </article>
+    <article class="work-item">
+      <div class="work-content">
+        <h3>Three-Dataset CKD Harmonization</h3>
+        <p>Harmonizing three chronic kidney disease datasets for cross-dataset analysis and external model validation, resolving inconsistencies in feature definitions and label conventions.</p>
+        <div class="work-meta"><span class="tag">Healthcare AI</span><span class="tag">CKD</span><span class="tag">External Validation</span></div>
+      </div>
+    </article>
+  </div>
+
+  <button class="expand-btn" aria-expanded="false" aria-controls="ongoing-extra" onclick="toggleExpand(this,'ongoing-extra')">
+    See all 5 ongoing projects <span class="btn-icon">+</span>
+  </button>
+  <div class="expandable-content" id="ongoing-extra">
+    <div class="work-list">
+      <article class="work-item">
+        <div class="work-content">
+          <h3>Natural Hazard Exposure &amp; Child Literacy in Bangladesh</h3>
+          <p>Examining whether recent natural hazard exposure affects foundational reading and numeracy skills in children aged 7–14, using the nationally representative MICS 2025 dataset.</p>
+          <div class="work-meta"><span class="tag">Education</span><span class="tag">Public Health</span><span class="tag">MICS 2025</span></div>
+        </div>
+      </article>
+      <article class="work-item">
+        <div class="work-content">
+          <h3>SYMTOLOGY: Code-Mixed Mental Health Dataset</h3>
+          <p>Constructing a synthetic code-mixed mental health dataset using an ontology-driven prompting framework, targeting Bengali–English mixing patterns common in low-resource settings.</p>
+          <div class="work-meta"><span class="tag">NLP</span><span class="tag">Mental Health</span><span class="tag">Bengali–English</span></div>
+        </div>
+      </article>
+      <article class="work-item">
+        <div class="work-content">
+          <h3>CGM Forecasting Sensitivity Analysis</h3>
+          <p>Systematic analysis of how short-term blood glucose forecasting models respond to changes in evaluation protocol, historical input window length, and prediction horizon.</p>
+          <div class="work-meta"><span class="tag">Healthcare AI</span><span class="tag">CGM</span><span class="tag">Forecast Evaluation</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="section" id="projects">
+<div class="shell">
+  <div class="section-head">
+    <div class="section-title-wrap"><h2>Selected Projects</h2></div>
+  </div>
+  <div class="project-grid">
+    <article class="project-card">
+      <div class="project-top"><span class="project-category">Tools &amp; Systems</span></div>
       <h3>ScholarLink — Faculty Finder</h3>
-      <p>Semantic search platform for SUST faculty using natural language queries. 611+ profiles indexed with vector embeddings. Stack: FastAPI, FAISS, HuggingFace, Python, Vercel.</p>
-      <p>Live: https://faculty-finder-phi.vercel.app/ · Code: https://github.com/Miftahul-adib/Faculty-finder</p>
-
+      <p>Semantic search platform enabling students to discover faculty and PhD researchers at SUST using natural-language queries. 611+ faculty profiles indexed with vector embeddings.</p>
+      <div class="stack"><span>FastAPI</span><span>FAISS</span><span>HuggingFace</span><span>Python</span><span>Vercel</span></div>
+      <div class="project-actions">
+        <a class="text-link" href="https://faculty-finder-phi.vercel.app/" rel="noopener" target="_blank">Live demo ↗</a>
+        <a class="text-link muted-link" href="https://github.com/Miftahul-adib/Faculty-finder" rel="noopener" target="_blank">Repository ↗</a>
+      </div>
+    </article>
+    <article class="project-card">
+      <div class="project-top"><span class="project-category">Healthcare</span></div>
       <h3>Blood Glucose Prediction on OhioT1DM</h3>
-      <p>30-minute-ahead CGM forecasting with ensemble ML, full SHAP and LIME explainability. Stack: Scikit-learn, SHAP, LIME, Pandas, Matplotlib.</p>
-      <p>Code: https://github.com/Miftahul-adib/Blood-Glucose-Prediction-on-OhioT1DM</p>
-
-      <h3>Bengali LLM Hallucination Detection</h3>
-      <p>Detecting unsupported or fabricated outputs in Bengali LLMs. Stack: NLP, Bengali, Python.</p>
-      <p>Code: https://github.com/Miftahul-adib/Bengali-LLM-Hallucination-Detection-Challenge</p>
-
+      <p>30-minute-ahead CGM forecasting using ensemble machine learning on the OhioT1DM dataset, with SHAP and LIME explainability to surface which features drive each prediction.</p>
+      <div class="stack"><span>Scikit-learn</span><span>SHAP</span><span>LIME</span><span>Pandas</span><span>Matplotlib</span></div>
+      <div class="project-actions">
+        <a class="text-link" href="https://github.com/Miftahul-adib/Blood-Glucose-Prediction-on-OhioT1DM" rel="noopener" target="_blank">Repository ↗</a>
+      </div>
+    </article>
+    <article class="project-card">
+      <div class="project-top"><span class="project-category">NLP &amp; Speech</span></div>
       <h3>Bengali Long-Form Speech and Speaker Diarization</h3>
-      <p>End-to-end pipeline for Bengali long-form speech recognition and speaker diarization. Stack: Whisper, PyTorch.</p>
-      <p>Code: https://github.com/Miftahul-adib/Bengali-Long-Form-Speech-Recognition-Speaker-Diarization</p>
+      <p>End-to-end pipeline for recognizing long-form Bengali speech and identifying individual speakers in multi-speaker audio recordings.</p>
+      <div class="stack"><span>Whisper</span><span>PyTorch</span><span>Speech</span><span>Diarization</span></div>
+      <div class="project-actions">
+        <a class="text-link" href="https://github.com/Miftahul-adib/Bengali-Long-Form-Speech-Recognition-Speaker-Diarization" rel="noopener" target="_blank">Repository ↗</a>
+      </div>
+    </article>
+  </div>
 
-      <h3>Retrieval-Augmented QA System</h3>
-      <p>RAG pipeline combining FAISS vector search with TAPAS for tabular question answering. Stack: FAISS, TAPAS, LangChain, Python.</p>
-      <p>Code: https://github.com/Miftahul-adib/Retrieval-Augmented-QA-System</p>
+  <button class="expand-btn" aria-expanded="false" aria-controls="projects-extra" onclick="toggleExpand(this,'projects-extra')" style="margin-top:14px">
+    See all 7 projects <span class="btn-icon">+</span>
+  </button>
+  <div class="expandable-content" id="projects-extra">
+    <div class="project-grid" style="padding-top:14px">
+      <article class="project-card">
+        <div class="project-top"><span class="project-category">NLP</span></div>
+        <h3>Bengali LLM Hallucination Detection</h3>
+        <p>System for identifying unsupported or fabricated outputs in Bengali large language models, with direct implications for deploying LLMs reliably in low-resource settings.</p>
+        <div class="stack"><span>NLP</span><span>Bengali</span><span>LLM</span><span>Python</span></div>
+        <div class="project-actions">
+          <a class="text-link" href="https://github.com/Miftahul-adib/Bengali-LLM-Hallucination-Detection-Challenge" rel="noopener" target="_blank">Repository ↗</a>
+        </div>
+      </article>
+      <article class="project-card">
+        <div class="project-top"><span class="project-category">Tools &amp; Systems</span></div>
+        <h3>Retrieval-Augmented QA System</h3>
+        <p>RAG pipeline combining FAISS vector search for document retrieval with TAPAS for answering questions over tabular data.</p>
+        <div class="stack"><span>FAISS</span><span>TAPAS</span><span>LangChain</span><span>Python</span></div>
+        <div class="project-actions">
+          <a class="text-link" href="https://github.com/Miftahul-adib/Retrieval-Augmented-QA-System" rel="noopener" target="_blank">Repository ↗</a>
+        </div>
+      </article>
+      <article class="project-card">
+        <div class="project-top"><span class="project-category">Computer Vision</span></div>
+        <h3>Roadside Object Detection</h3>
+        <p>Real-time multi-class roadside object detection using YOLOv11n with a custom training pipeline, optimized for Bangladeshi road conditions.</p>
+        <div class="stack"><span>YOLOv11</span><span>OpenCV</span><span>PyTorch</span><span>Computer Vision</span></div>
+        <div class="project-actions">
+          <a class="text-link" href="https://github.com/Miftahul-adib/Roadside-object-detection" rel="noopener" target="_blank">Repository ↗</a>
+        </div>
+      </article>
+      <article class="project-card">
+        <div class="project-top"><span class="project-category">Data Analysis</span></div>
+        <h3>YouTube Data Analysis</h3>
+        <p>Exploratory analysis of the top 100 YouTube channels — subscriber trends, category distributions and engagement patterns using Python data tools.</p>
+        <div class="stack"><span>Pandas</span><span>Matplotlib</span><span>Seaborn</span><span>EDA</span></div>
+        <div class="project-actions">
+          <a class="text-link" href="https://github.com/Miftahul-adib/Youtube-data-analysis" rel="noopener" target="_blank">Repository ↗</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+</section>
 
-      <h3>Roadside Object Detection</h3>
-      <p>YOLOv11n real-time multi-class object detection for Bangladeshi road conditions. Stack: YOLOv11, OpenCV, PyTorch.</p>
-      <p>Code: https://github.com/Miftahul-adib/Roadside-object-detection</p>
+<section class="section" id="competitions">
+<div class="shell">
+  <div class="section-head">
+    <div class="section-title-wrap"><h2>Competitions &amp; Recognition</h2></div>
+  </div>
+  <div class="competition-list">
+    <article class="competition">
+      <div class="rank">4th<small>Place</small></div>
+      <div>
+        <h3>Bangla Dialect Speech Recognition</h3>
+        <p>Shobdotori · AIFication · Team BackpropSust. Dual-stage fine-tuning using Whisper Medium and LoRA for dialect-aware Bangla speech recognition.</p>
+      </div>
+      <a class="text-link comp-link" href="https://github.com/Miftahul-adib/AIFication-4th-Place-Solution-BackpropSust" rel="noopener" target="_blank">Solution ↗</a>
+    </article>
+    <article class="competition">
+      <div class="rank">4th<small>Online track</small></div>
+      <div>
+        <h3>Khata — Whiteboard-to-Practice Pipeline</h3>
+        <p>Build With Gemma @ Bangladesh 2026 · Kaggle · Google DeepMind · Team BackpropSust. Gemma-powered pipeline that converts whiteboard photos into structured board-exam practice questions.</p>
+      </div>
+      <a class="text-link comp-link" href="https://www.kaggle.com/competitions/build-with-gemma-bangladesh/writeups/new-writeup-1785044974927" rel="noopener" target="_blank">Write-up ↗</a>
+    </article>
+    <article class="competition">
+      <div class="rank">Top 15<small>of 101 teams</small></div>
+      <div>
+        <h3>RoadVision — Vehicle Detection</h3>
+        <p>DUET AI Hackathon · Team BackpropSust. YOLOv8-based multi-class vehicle detection trained on Bangladesh highway CCTV footage.</p>
+      </div>
+      <a class="text-link comp-link" href="https://github.com/Miftahul-adib/Duet-AI-Hackathon-solution" rel="noopener" target="_blank">Solution ↗</a>
+    </article>
+  </div>
 
-      <h3>YouTube Data Analysis</h3>
-      <p>EDA of top 100 YouTube channels — subscriber trends, category distributions, engagement patterns. Stack: Pandas, Matplotlib, Seaborn.</p>
-      <p>Code: https://github.com/Miftahul-adib/Youtube-data-analysis</p>
+  <button class="expand-btn" aria-expanded="false" aria-controls="comp-extra" onclick="toggleExpand(this,'comp-extra')">
+    See all 5 competitions <span class="btn-icon">+</span>
+  </button>
+  <div class="expandable-content" id="comp-extra">
+    <div class="competition-list">
+      <article class="competition">
+        <div class="rank">Final<small>Round</small></div>
+        <div>
+          <h3>SkinAI — Rural Healthcare Access</h3>
+          <p>Infinity AI Buildfest · BRAC University · Team Paradox. Platform connecting rural patients in Bangladesh with nearby doctors, with skin-condition prediction from uploaded images. Selected for both the preliminary and final Healthcare track rounds.</p>
+        </div>
+        <span class="small-note">Healthcare track</span>
+      </article>
+      <article class="competition">
+        <div class="rank">20th<small>of 151 teams</small></div>
+        <div>
+          <h3>PoliMemeDecode — Political Meme Classification</h3>
+          <p>National Datathon · Team BackpropSust. DeBERTa-v3 and RoBERTa combined with YOLO logo detection and InsightFace for multimodal classification.</p>
+        </div>
+        <a class="text-link comp-link" href="https://github.com/Miftahul-adib/PoliMemeDecode" rel="noopener" target="_blank">Solution ↗</a>
+      </article>
+    </div>
+  </div>
+</div>
+</section>
 
-      <h2>Competitions</h2>
+<section class="section" id="experience">
+<div class="shell">
+  <div class="section-head">
+    <div class="section-title-wrap"><h2>Experience &amp; Education</h2></div>
+  </div>
+  <div class="two-col">
+    <div>
+      <h3 class="subheading">Experience</h3>
+      <div class="timeline">
+        <article class="timeline-entry">
+          <div class="timeline-date">Aug 2025 — Present &nbsp;·&nbsp; Remote, United States</div>
+          <h3>Research Associate</h3>
+          <div class="timeline-org">Research Den</div>
+          <p>An AI/ML volunteer research community helping members publish in peer-reviewed conferences and journals through mentorship and collaboration.</p>
+          <ul>
+            <li>Co-authored multiple research manuscripts across data analysis, experimentation and writing.</li>
+            <li>Active contributor across several ongoing projects, applying ML techniques throughout the research pipeline.</li>
+          </ul>
+        </article>
+        <article class="timeline-entry">
+          <div class="timeline-date">Sylhet, Bangladesh</div>
+          <h3>Junior Python Mentor</h3>
+          <div class="timeline-org">SUST Data Science Club &nbsp;·&nbsp; PyNEXT</div>
+          <p>Delivered in-person instruction for the seven-day PyNEXT course, guiding roughly 50 learners through Python fundamentals and troubleshooting.</p>
+        </article>
+      </div>
+    </div>
+    <div>
+      <h3 class="subheading">Education</h3>
+      <div class="timeline">
+        <article class="timeline-entry">
+          <div class="timeline-date">Nov 2024 — Present</div>
+          <h3>B.Sc. in Statistics</h3>
+          <div class="timeline-org">Shahjalal University of Science and Technology (SUST)</div>
+          <p>Sylhet, Bangladesh.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
 
-      <h3>Bangla Dialect Speech Recognition — 4th Place</h3>
-      <p>Shobdotori · AIFication. Dual-stage fine-tuning with Whisper Medium and LoRA. Team: BackpropSust.</p>
-      <p>Code: https://github.com/Miftahul-adib/AIFication-4th-Place-Solution-BackpropSust</p>
+<section class="section" id="future">
+<div class="shell">
+  <div class="section-head">
+    <div class="section-title-wrap"><h2>Future Directions</h2></div>
+  </div>
+  <div class="future-grid">
+    <article class="future-card">
+      <h3>Mind, Cognition and AI</h3>
+      <p>Philosophy of mind, cognitive psychology and neuroscience each offer frameworks that can sharpen how we build AI. I want to work at that boundary, asking both what these fields tell us about intelligence and what AI in turn reveals about the mind.</p>
+    </article>
+    <article class="future-card">
+      <h3>Agentic AI and Language Models</h3>
+      <p>Autonomous LLM-based systems that plan, use tools and act across multi-step tasks are becoming practical. I'm interested in understanding their failure modes as much as their capabilities, and in building systems that are reliable in deployment.</p>
+    </article>
+    <article class="future-card">
+      <h3>ML for Scientific Discovery</h3>
+      <p>Machine learning can find structure that human analysis misses, especially in physical and biological data. I want to work on models that respect domain constraints while surfacing genuinely new patterns.</p>
+    </article>
+  </div>
+</div>
+</section>
 
-      <h3>RoadVision Vehicle Detection — Top 15 of 101 Teams</h3>
-      <p>DUET AI Hackathon. YOLOv8 multi-class vehicle detection on Bangladesh highway CCTV. Team: BackpropSust.</p>
-      <p>Code: https://github.com/Miftahul-adib/Duet-AI-Hackathon-solution</p>
+<section class="section" id="skills">
+<div class="shell">
+  <div class="section-head">
+    <div class="section-title-wrap"><h2>Technical Toolkit</h2></div>
+  </div>
+  <div class="skills-wrap">
+    <article class="skill-row"><h3>ML &amp; Deep Learning</h3><p>PyTorch · TensorFlow · Scikit-learn · OpenCV · Hugging Face · YOLO · Whisper · LangChain · LangGraph · Keras</p></article>
+    <article class="skill-row"><h3>Data Analysis &amp; Statistics</h3><p>Pandas · NumPy · Matplotlib · Seaborn · SciPy · Microsoft Excel · SPSS · Stata</p></article>
+    <article class="skill-row"><h3>Databases &amp; Search</h3><p>PostgreSQL · MySQL · SQLite · FAISS Vector DB</p></article>
+    <article class="skill-row"><h3>Deployment &amp; Web</h3><p>FastAPI · Streamlit · Pydantic · Docker · Render</p></article>
+    <article class="skill-row"><h3>Programming &amp; Tools</h3><p>Python · SQL · HTML5 · Git · GitHub · Kaggle · Jupyter</p></article>
+  </div>
+</div>
+</section>
 
-      <h3>PoliMemeDecode Political Meme Classification — Rank 20 of 151 Teams</h3>
-      <p>National Datathon. DeBERTa-v3 + RoBERTa + YOLO + InsightFace multimodal classification. Team: BackpropSust.</p>
-      <p>Code: https://github.com/Miftahul-adib/PoliMemeDecode</p>
+<section class="section" id="about">
+<div class="shell">
+  <div class="section-head">
+    <div class="section-title-wrap"><h2>Thoughts</h2></div>
+  </div>
+  <div class="about-copy">
+    <p>I think research is beautiful. I love when I see the patterns in datasets and explore them. Research, to me, is not confined to one domain. People ask me what my goal is, or whether I want a PhD. Honestly, I have no idea. I do research because I love it.</p>
+  </div>
+</div>
+</section>
 
-      <h3>SkinAI Rural Healthcare Access — Final Round</h3>
-      <p>Infinity AI Buildfest · BRAC University. Rural patient–doctor connection platform with skin condition prediction. Team: Paradox.</p>
+</main>
 
-      <h3>Khata Whiteboard-to-Practice Pipeline — 4th Place Online Track</h3>
-      <p>Build With Gemma @Bangladesh 2026 · Kaggle · Google DeepMind. Gemma-powered whiteboard-to-exam-question pipeline. Team: BackpropSust.</p>
-      <p>Writeup: https://www.kaggle.com/competitions/build-with-gemma-bangladesh/writeups/new-writeup-1785044974927</p>
+<footer class="contact" id="contact">
+<div class="shell">
+  <h2>Let's connect.</h2>
+  <p class="contact-lede">Interested in research discussions, collaborations or building something? Feel free to reach out.</p>
+  <div class="contact-links">
+    <a href="mailto:miftahuladib04@gmail.com">Email ↗</a>
+    <a href="https://scholar.google.com/citations?hl=en&user=3UH7xHsAAAAJ" rel="noopener" target="_blank">Google Scholar ↗</a>
+    <a href="https://github.com/Miftahul-adib" rel="noopener" target="_blank">GitHub ↗</a>
+    <a href="https://www.linkedin.com/in/miftahul-alam-adib/" rel="noopener" target="_blank">LinkedIn ↗</a>
+    <a href="https://www.kaggle.com/miftahuladib" rel="noopener" target="_blank">Kaggle ↗</a>
+    <a href="cv.pdf" target="_blank">Download CV ↗</a>
+  </div>
+</div>
+</footer>
 
-      <h2>Skills</h2>
-      <p>ML and Deep Learning: PyTorch, TensorFlow, Scikit-learn, OpenCV, HuggingFace, YOLO, Whisper, LangChain, LangGraph, Keras</p>
-      <p>Data Analysis and Statistics: Pandas, NumPy, Matplotlib, Seaborn, SciPy, Microsoft Excel, SPSS, Stata</p>
-      <p>Databases: PostgreSQL, MySQL, SQLite, FAISS Vector DB</p>
-      <p>Deployment and Web: FastAPI, Streamlit, Pydantic, Docker, Render</p>
-      <p>Languages and Tools: Python, SQL, HTML5, Git, GitHub, Kaggle, Jupyter</p>
-
-      <h2>Links</h2>
-      <p>Google Scholar: https://scholar.google.com/citations?hl=en&user=3UH7xHsAAAAJ</p>
-      <p>GitHub: https://github.com/Miftahul-adib</p>
-      <p>LinkedIn: https://www.linkedin.com/in/miftahul-alam-adib/</p>
-      <p>Kaggle: https://www.kaggle.com/miftahuladib</p>
-    </noscript>
-
-    <div id="root"><nav class="navbar "><div class="navbar__inner"><a href="#top" class="navbar__link ">ABOUT</a><a href="#experience" class="navbar__link ">EXPERIENCE</a><a href="#research" class="navbar__link ">RESEARCH</a><a href="#projects" class="navbar__link ">PROJECTS</a><a href="#competitions" class="navbar__link ">COMPETITIONS</a><a href="#skills" class="navbar__link ">SKILLS</a><a href="#goals" class="navbar__link ">GOALS</a><a href="#contact" class="navbar__link ">CONTACT</a></div></nav><main><section class="hero " id="top"><div class="hero__sidebar"></div><div class="hero__content"><h1 class="hero__name">MIFTAHUL ALAM ADIB</h1><p class="hero__role">Machine Learning Researcher</p><div class="hero__rule"></div><p class="hero__affil">Statistics, Shahjalal University of Science and Technology (SUST), Sylhet, Bangladesh</p><p class="hero__affil">Research Associate, Research Den, Remote, US</p><div class="hero__sections"><div class="hero__block"><span class="section-label">About</span><p class="hero__body">My work sits at the boundary of statistical rigor and modern machine learning, focused on healthcare AI, computer vision, and low-resource NLP, and on deploying these methods as real-world, full-stack systems. I enjoy doing research, competitions, hackathons, and applied projects. I love exchanging perspectives. Feel free to reach out.</p></div><div class="hero__block"><span class="section-label">On Research</span><p class="hero__body">I think research is beautiful. I love when I see the patterns in datasets and explore them. Research, to me, is not confined to one domain. People ask me what my goal is, or whether I want a PhD. Honestly, I have no idea. I do research because I love it.</p></div></div><div class="hero__socials"><a href="https://www.linkedin.com/in/miftahul-alam-adib/" target="_blank" rel="noopener noreferrer" class="hero__social" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a><a href="https://github.com/Miftahul-adib" target="_blank" rel="noopener noreferrer" class="hero__social" aria-label="GitHub"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a><a href="https://www.kaggle.com/miftahuladib" target="_blank" rel="noopener noreferrer" class="hero__social" aria-label="Kaggle"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.353c0-.233.118-.353.354-.353h2.431c.234 0 .351.12.351.353v14.343l6.203-6.272c.165-.165.33-.246.495-.246h3.239c.144 0 .236.06.285.18.046.149.034.255-.036.315l-6.555 6.344 6.836 8.507c.095.104.117.208.07.334z"></path></svg></a><a href="https://scholar.google.com/citations?hl=en&amp;user=3UH7xHsAAAAJ" target="_blank" rel="noopener noreferrer" class="hero__social" aria-label="Google Scholar"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"></path></svg></a><a href="mailto:miftahuladib04@gmail.com" rel="noopener noreferrer" class="hero__social" aria-label="Email"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg></a></div></div></section><section id="experience" class="page-section"><div class="page-section__sidebar"></div><div class="section-wrapper"><span class="reveal section-label">Education</span><div class="reveal exp__row"><div class="exp__meta"><span class="exp__period">Nov 2024 – Present</span></div><div class="exp__body"><h3 class="exp__title">B.Sc. in Statistics</h3><p class="exp__org">Shahjalal University of Science and Technology<!-- -->, <!-- -->Sylhet, Bangladesh</p></div></div><span class="reveal section-label exp__section-gap">Experience</span><div class="reveal exp__row"><div class="exp__meta"><span class="exp__period">Aug 2025 – Present</span><span class="exp__location">Remote, United States</span></div><div class="exp__body"><h3 class="exp__title">Research Associate</h3><p class="exp__org">Research Den</p><p class="exp__desc">An AI/ML volunteer research community helping members publish in peer-reviewed conferences and journals through mentorship and collaboration.</p><ul class="exp__bullets"><li>Co-authored a research manuscript currently under review, contributing across data analysis, experimentation, and writing.</li><li>Active contributor across multiple ongoing research projects, applying machine learning techniques across the full research pipeline.</li></ul></div></div><div class="reveal exp__row"><div class="exp__meta"><span class="exp__period"></span><span class="exp__location">Sylhet, Bangladesh</span></div><div class="exp__body"><h3 class="exp__title">Junior Python Mentor</h3><p class="exp__org">SUST Data Science Club</p><ul class="exp__bullets"><li>Delivered in-person instruction for the 7-day &quot;PyNEXT&quot; course, guiding a cohort of 50 students through Python fundamentals and troubleshooting challenges.</li><li>Provided one-on-one support to strengthen participants&#x27;s programming skills, fostering an engaging and collaborative learning environment.</li></ul></div></div></div></section><section id="research" class="page-section research-section"><div class="page-section__sidebar"></div><div class="section-wrapper"><span class="reveal section-label">Research</span><span class="reveal research__sub-label">Completed</span><div class="research__papers"><div class="reveal research__paper-card"><div class="research__paper-header"><span class="research__paper-num">01</span><span class="research__paper-venue">arXiv · 2025</span></div><h3 class="research__paper-title">A Dual Pipeline Machine Learning Framework for Automated Multi-Class Sleep Disorder Screening Using Hybrid Resampling and Ensemble Learning</h3><p class="research__paper-plain">Designed a two-stage ML pipeline for automatically detecting sleep disorders — addressing severe class imbalance through hybrid resampling and combining multiple classifiers to improve reliability across disorder categories.</p><div class="research__tags"><span class="research__tag">Ensemble Learning</span><span class="research__tag">Healthcare</span><span class="research__tag">Class Imbalance</span><span class="research__tag">Screening</span></div><div class="research__links"><a href="https://arxiv.org/abs/2601.05814" target="_blank" rel="noopener noreferrer" class="research__link">Paper ↗</a><a href="https://github.com/Miftahul-adib/sleep-disorder" target="_blank" rel="noopener noreferrer" class="research__link">Code ↗</a></div></div><div class="reveal research__paper-card"><div class="research__paper-header"><span class="research__paper-num">02</span><span class="research__paper-venue">IJABC · JSTAGE · 2026</span></div><h3 class="research__paper-title">A Coverage Preserving Ensemble Framework with Minority Recovery for Robust Indoor Localization</h3><p class="research__paper-plain">Proposed an ensemble-based localization system that maintains coverage across the full indoor space while recovering accuracy for underrepresented zones — a common failure mode in WiFi fingerprinting systems.</p><div class="research__tags"><span class="research__tag">Indoor Localization</span><span class="research__tag">Ensemble Learning</span><span class="research__tag">Minority Recovery</span><span class="research__tag">Coverage</span></div><div class="research__links"><a href="https://www.jstage.jst.go.jp/article/ijabc/2026/2/2026_160/_article" target="_blank" rel="noopener noreferrer" class="research__link">Paper ↗</a><a href="https://github.com/Miftahul-adib/Coverage-preserving-localization" target="_blank" rel="noopener noreferrer" class="research__link">Code ↗</a></div></div><div class="reveal research__paper-card"><div class="research__paper-header"><span class="research__paper-num">03</span><span class="research__paper-venue">ResearchSquare · Preprint</span></div><h3 class="research__paper-title">Explainable Machine Learning for Chronic Kidney Disease Classification from Routine Urinalysis and Diabetes Records</h3><p class="research__paper-plain">Built an interpretable ML pipeline for CKD classification using routine clinical tests — applying SHAP and LIME to make model decisions transparent and clinically meaningful.</p><div class="research__tags"><span class="research__tag">Explainable AI</span><span class="research__tag">CKD</span><span class="research__tag">Healthcare</span><span class="research__tag">SHAP</span><span class="research__tag">LIME</span></div><div class="research__links"><a href="https://www.researchsquare.com/article/rs-10968179/v1" target="_blank" rel="noopener noreferrer" class="research__link">Paper ↗</a><a href="https://github.com/Munfa/CKD-Explainable-AI" target="_blank" rel="noopener noreferrer" class="research__link">Code ↗</a></div></div></div><span class="reveal research__sub-label research__sub-label--ongoing">Ongoing</span><div class="research__ongoing-grid"><div class="reveal research__ongoing-card"><span class="research__ongoing-status">In Progress</span><div class="research__ongoing-domain">Education · Public Health</div><h3 class="research__ongoing-title">Natural Hazard Exposure &amp; Child Literacy in Bangladesh</h3><p class="research__ongoing-desc">Examining whether recent natural hazard exposure affects foundational reading and numeracy skills in children aged 7–14, using the nationally representative MICS 2025 dataset.</p></div><div class="reveal research__ongoing-card"><span class="research__ongoing-status">In Progress</span><div class="research__ongoing-domain">NLP · Mental Health</div><h3 class="research__ongoing-title">SYMTOLOGY: Code-Mixed Mental Health Dataset</h3><p class="research__ongoing-desc">Building a synthetic code-mixed dataset for mental health in a low-resource language using an ontology-driven prompting framework — targeting Bengali–English mixing patterns.</p></div><div class="reveal research__ongoing-card"><span class="research__ongoing-status">In Progress</span><div class="research__ongoing-domain">Healthcare AI · CGM</div><h3 class="research__ongoing-title">CGM Forecasting Sensitivity Analysis</h3><p class="research__ongoing-desc">Systematic analysis of how short-term blood glucose forecasting models respond to changes in evaluation protocol, historical input window length, and prediction horizon.</p></div><div class="reveal research__ongoing-card"><span class="research__ongoing-status">In Progress</span><div class="research__ongoing-domain">Healthcare AI · CGM</div><h3 class="research__ongoing-title">Cross-Population CGM Forecasting</h3><p class="research__ongoing-desc">Developing a leakage-controlled evaluation framework to test whether short-term CGM forecasting models generalize across different patient populations.</p></div><div class="reveal research__ongoing-card"><span class="research__ongoing-status">In Progress</span><div class="research__ongoing-domain">Healthcare AI · CKD</div><h3 class="research__ongoing-title">Three-Dataset CKD Harmonization</h3><p class="research__ongoing-desc">Harmonizing three chronic kidney disease datasets for cross-dataset analysis, external model validation, and explainable machine learning — addressing inconsistencies in feature definitions and label conventions.</p></div></div></div></section><section id="projects" class="page-section projects-section"><div class="page-section__sidebar"></div><div class="section-wrapper"><span class="reveal section-label">Projects</span><div class="projects__grid"><div class="reveal projects__card"><span class="projects__category">Tools &amp; Systems</span><h3 class="projects__name">ScholarLink — Faculty Finder</h3><p class="projects__desc">Semantic search platform enabling students to discover faculty and PhD researchers at SUST using natural language queries. 611+ faculty profiles indexed with vector embeddings.</p><div class="projects__tech"><span class="projects__tech-tag">FastAPI</span><span class="projects__tech-tag">FAISS</span><span class="projects__tech-tag">HuggingFace</span><span class="projects__tech-tag">Python</span><span class="projects__tech-tag">Vercel</span></div><div class="projects__links"><a href="https://faculty-finder-phi.vercel.app/" target="_blank" rel="noopener noreferrer" class="projects__link">Live ↗</a><a href="https://github.com/Miftahul-adib/Faculty-finder" target="_blank" rel="noopener noreferrer" class="projects__link">Code ↗</a></div></div><div class="reveal projects__card"><span class="projects__category">Healthcare</span><h3 class="projects__name">Blood Glucose Prediction on OhioT1DM</h3><p class="projects__desc">30-minute-ahead CGM forecasting using ensemble machine learning on the OhioT1DM dataset, with full SHAP and LIME explainability to surface which features drive each prediction.</p><div class="projects__tech"><span class="projects__tech-tag">Scikit-learn</span><span class="projects__tech-tag">SHAP</span><span class="projects__tech-tag">LIME</span><span class="projects__tech-tag">Pandas</span><span class="projects__tech-tag">Matplotlib</span></div><div class="projects__links"><a href="https://github.com/Miftahul-adib/Blood-Glucose-Prediction-on-OhioT1DM" target="_blank" rel="noopener noreferrer" class="projects__link">Code ↗</a></div></div><div class="reveal projects__card"><span class="projects__category">NLP</span><h3 class="projects__name">Bengali LLM Hallucination Detection</h3><p class="projects__desc">System for identifying unsupported or fabricated outputs in Bengali large language models — a reliability problem with direct implications for deploying LLMs in low-resource settings.</p><div class="projects__tech"><span class="projects__tech-tag">NLP</span><span class="projects__tech-tag">Bengali</span><span class="projects__tech-tag">LLM</span><span class="projects__tech-tag">Python</span></div><div class="projects__links"><a href="https://github.com/Miftahul-adib/Bengali-LLM-Hallucination-Detection-Challenge" target="_blank" rel="noopener noreferrer" class="projects__link">Code ↗</a></div></div><div class="reveal projects__card"><span class="projects__category">NLP</span><h3 class="projects__name">Bengali Long-Form Speech &amp; Speaker Diarization</h3><p class="projects__desc">End-to-end pipeline for recognizing long-form Bengali speech and identifying individual speakers in multi-speaker audio recordings.</p><div class="projects__tech"><span class="projects__tech-tag">Whisper</span><span class="projects__tech-tag">NLP</span><span class="projects__tech-tag">Speech</span><span class="projects__tech-tag">Diarization</span><span class="projects__tech-tag">PyTorch</span></div><div class="projects__links"><a href="https://github.com/Miftahul-adib/Bengali-Long-Form-Speech-Recognition-Speaker-Diarization" target="_blank" rel="noopener noreferrer" class="projects__link">Code ↗</a></div></div><div class="reveal projects__card"><span class="projects__category">Tools &amp; Systems</span><h3 class="projects__name">Retrieval-Augmented QA System</h3><p class="projects__desc">RAG pipeline combining FAISS vector search for document retrieval with TAPAS for answering questions over tabular data.</p><div class="projects__tech"><span class="projects__tech-tag">FAISS</span><span class="projects__tech-tag">TAPAS</span><span class="projects__tech-tag">LangChain</span><span class="projects__tech-tag">Python</span></div><div class="projects__links"><a href="https://github.com/Miftahul-adib/Retrieval-Augmented-QA-System" target="_blank" rel="noopener noreferrer" class="projects__link">Code ↗</a></div></div><div class="reveal projects__card"><span class="projects__category">Computer Vision</span><h3 class="projects__name">Roadside Object Detection</h3><p class="projects__desc">Real-time multi-class roadside object detection using YOLOv11n with a custom training pipeline, optimized for Bangladeshi road conditions.</p><div class="projects__tech"><span class="projects__tech-tag">YOLOv11</span><span class="projects__tech-tag">OpenCV</span><span class="projects__tech-tag">PyTorch</span><span class="projects__tech-tag">Computer Vision</span></div><div class="projects__links"><a href="https://github.com/Miftahul-adib/Roadside-object-detection" target="_blank" rel="noopener noreferrer" class="projects__link">Code ↗</a></div></div><div class="reveal projects__card"><span class="projects__category">Tools &amp; Systems</span><h3 class="projects__name">YouTube Data Analysis</h3><p class="projects__desc">Exploratory data analysis of the top 100 YouTube channels — subscriber trends, category distributions, and engagement patterns using Pandas, Matplotlib, and Seaborn.</p><div class="projects__tech"><span class="projects__tech-tag">Pandas</span><span class="projects__tech-tag">Matplotlib</span><span class="projects__tech-tag">Seaborn</span><span class="projects__tech-tag">EDA</span></div><div class="projects__links"><a href="https://github.com/Miftahul-adib/Youtube-data-analysis" target="_blank" rel="noopener noreferrer" class="projects__link">Code ↗</a></div></div></div></div></section><section id="competitions" class="page-section competitions-section"><div class="page-section__sidebar"></div><div class="section-wrapper"><span class="reveal section-label">Competitions</span><div class="comp__list"><div class="reveal comp__entry"><div class="comp__header"><span class="comp__organizer">Shobdotori · AIFication</span><span class="comp__badge">4th Place</span></div><h3 class="comp__title">Bangla Dialect Speech Recognition</h3><p class="comp__team">Team: <!-- -->BackpropSust</p><p class="comp__method">Dual-stage fine-tuning pipeline using Whisper Medium and LoRA for dialect-aware Bangla speech recognition.</p><div class="comp__tags"><span class="comp__tag">Whisper</span><span class="comp__tag">LoRA</span><span class="comp__tag">Speech</span><span class="comp__tag">Bengali</span></div><div class="comp__links"><a href="https://github.com/Miftahul-adib/AIFication-4th-Place-Solution-BackpropSust" target="_blank" rel="noopener noreferrer" class="comp__link">Code ↗</a></div></div><div class="reveal comp__entry"><div class="comp__header"><span class="comp__organizer">DUET AI Hackathon</span><span class="comp__badge">Top 15 / 101 Teams</span></div><h3 class="comp__title">RoadVision — Vehicle Detection</h3><p class="comp__team">Team: <!-- -->BackpropSust</p><p class="comp__method">YOLOv8-based multi-class vehicle detection pipeline trained and evaluated on Bangladesh highway CCTV footage.</p><div class="comp__tags"><span class="comp__tag">YOLOv8</span><span class="comp__tag">Object Detection</span><span class="comp__tag">Computer Vision</span></div><div class="comp__links"><a href="https://github.com/Miftahul-adib/Duet-AI-Hackathon-solution" target="_blank" rel="noopener noreferrer" class="comp__link">Code ↗</a></div></div><div class="reveal comp__entry"><div class="comp__header"><span class="comp__organizer">National Datathon</span><span class="comp__badge">Rank 20 / 151 Teams</span></div><h3 class="comp__title">PoliMemeDecode — Political Meme Classification</h3><p class="comp__team">Team: <!-- -->BackpropSust</p><p class="comp__method">Dual-encoder setup (DeBERTa-v3 + RoBERTa) combined with YOLO logo detection and InsightFace for multimodal political meme classification.</p><div class="comp__tags"><span class="comp__tag">DeBERTa</span><span class="comp__tag">RoBERTa</span><span class="comp__tag">YOLO</span><span class="comp__tag">Multimodal</span><span class="comp__tag">NLP</span></div><div class="comp__links"><a href="https://github.com/Miftahul-adib/PoliMemeDecode" target="_blank" rel="noopener noreferrer" class="comp__link">Code ↗</a></div></div><div class="reveal comp__entry"><div class="comp__header"><span class="comp__organizer">Infinity AI Buildfest · BRAC University</span><span class="comp__badge">Final Round</span></div><h3 class="comp__title">SkinAI — Rural Healthcare Access</h3><p class="comp__team">Team: <!-- -->Paradox</p><p class="comp__method">Platform connecting rural patients in Bangladesh with nearby doctors, with initial skin condition prediction from uploaded images. Selected for preliminary and final round (Healthcare track).</p><div class="comp__tags"><span class="comp__tag">Healthcare</span><span class="comp__tag">Computer Vision</span><span class="comp__tag">Deployment</span></div><div class="comp__links"></div></div><div class="reveal comp__entry"><div class="comp__header"><span class="comp__organizer">Build With Gemma @Bangladesh 2026 · Kaggle · Google DeepMind</span><span class="comp__badge">4th Place · Online Track</span></div><h3 class="comp__title">Khata — Whiteboard-to-Practice Pipeline</h3><p class="comp__team">Team: <!-- -->BackpropSust</p><p class="comp__method">Gemma-powered pipeline that photographs a classroom whiteboard and converts it into structured board-exam practice questions.</p><div class="comp__tags"><span class="comp__tag">Gemma</span><span class="comp__tag">LLM</span><span class="comp__tag">Education</span><span class="comp__tag">Multimodal</span></div><div class="comp__links"><a href="https://www.kaggle.com/competitions/build-with-gemma-bangladesh/writeups/new-writeup-1785044974927" target="_blank" rel="noopener noreferrer" class="comp__link">Writeup ↗</a></div></div></div></div></section><section id="skills" class="page-section skills-section"><div class="page-section__sidebar"></div><div class="section-wrapper"><span class="reveal section-label">Skills</span><div class="skills__groups"><div class="reveal skills__group"><h3 class="skills__group-heading">ML &amp; Deep Learning</h3><div class="skills__pills"><span class="skills__pill">PyTorch</span><span class="skills__pill">TensorFlow</span><span class="skills__pill">Scikit-learn</span><span class="skills__pill">OpenCV</span><span class="skills__pill">HuggingFace</span><span class="skills__pill">YOLO</span><span class="skills__pill">Whisper</span><span class="skills__pill">LangChain</span><span class="skills__pill">LangGraph</span><span class="skills__pill">Keras</span></div></div><div class="reveal skills__group"><h3 class="skills__group-heading">Data Analysis &amp; Statistics</h3><div class="skills__pills"><span class="skills__pill">Pandas</span><span class="skills__pill">NumPy</span><span class="skills__pill">Matplotlib</span><span class="skills__pill">Seaborn</span><span class="skills__pill">SciPy</span><span class="skills__pill">Microsoft Excel</span><span class="skills__pill">SPSS</span><span class="skills__pill">Stata</span></div></div><div class="reveal skills__group"><h3 class="skills__group-heading">Databases</h3><div class="skills__pills"><span class="skills__pill">PostgreSQL</span><span class="skills__pill">MySQL</span><span class="skills__pill">SQLite</span><span class="skills__pill">FAISS Vector DB</span></div></div><div class="reveal skills__group"><h3 class="skills__group-heading">Deployment &amp; Web</h3><div class="skills__pills"><span class="skills__pill">FastAPI</span><span class="skills__pill">Streamlit</span><span class="skills__pill">Pydantic</span><span class="skills__pill">Docker</span><span class="skills__pill">Render</span></div></div><div class="reveal skills__group"><h3 class="skills__group-heading">Languages &amp; Tools</h3><div class="skills__pills"><span class="skills__pill">Python</span><span class="skills__pill">SQL</span><span class="skills__pill">HTML5</span><span class="skills__pill">Git</span><span class="skills__pill">GitHub</span><span class="skills__pill">Kaggle</span><span class="skills__pill">Jupyter</span></div></div></div></div></section><section id="goals" class="page-section"><div class="page-section__sidebar"></div><div class="section-wrapper"><span class="reveal section-label">Goals</span><div class="goals__grid"><div class="reveal goals__card"><h4 class="goals__title">Philosophy, Psychology, Neuroscience &amp; AI</h4><p class="goals__body">I am deeply interested in the intersection of mind and machine — how insights from philosophy of mind, cognitive psychology, and neuroscience can inform how we build and think about artificial intelligence, and what AI in turn reveals about cognition itself.</p></div><div class="reveal goals__card"><h4 class="goals__title">Machine Learning in Healthcare &amp; Physical Science</h4><p class="goals__body">In healthcare, ML can reach patients that specialist care cannot — predicting disease, flagging risk, making the invisible visible in clinical data. In physical science, the laws are known but the patterns are not, and models that respect domain constraints while discovering what lies beyond human intuition are some of the most interesting things you can build.</p></div><div class="reveal goals__card"><h4 class="goals__title">Faculty Finder</h4><p class="goals__body">I am working on a platform for PhD aspirants to find professors whose research aligns with their interests.</p></div><div class="reveal goals__card"><h4 class="goals__title">Agentic AI &amp; LLMs</h4><p class="goals__body">Building and studying autonomous LLM-based systems that can plan, use tools, and act across multi-step tasks, with a genuine interest in where these systems work, where they fail, and why.</p></div></div></div></section><section id="contact" class="page-section contact-section"><div class="page-section__sidebar"></div><div class="section-wrapper"><span class="reveal section-label">Contact</span><div class="contact__inner"><a href="mailto:miftahuladib04@gmail.com" class="reveal contact__email">miftahuladib04@gmail.com</a><a href="/my-portfolio/cv.pdf" class="reveal contact__cv" download="">Download CV →</a><div class="reveal contact__socials"><a href="https://www.linkedin.com/in/miftahul-alam-adib/" target="_blank" rel="noopener noreferrer" class="contact__social" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a><a href="https://github.com/Miftahul-adib" target="_blank" rel="noopener noreferrer" class="contact__social" aria-label="GitHub"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a><a href="https://www.kaggle.com/miftahuladib" target="_blank" rel="noopener noreferrer" class="contact__social" aria-label="Kaggle"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.353c0-.233.118-.353.354-.353h2.431c.234 0 .351.12.351.353v14.343l6.203-6.272c.165-.165.33-.246.495-.246h3.239c.144 0 .236.06.285.18.046.149.034.255-.036.315l-6.555 6.344 6.836 8.507c.095.104.117.208.07.334z"></path></svg></a><a href="https://scholar.google.com/citations?hl=en&amp;user=3UH7xHsAAAAJ" target="_blank" rel="noopener noreferrer" class="contact__social" aria-label="Google Scholar"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"></path></svg></a><a href="mailto:miftahuladib04@gmail.com" rel="noopener noreferrer" class="contact__social" aria-label="Email"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg></a></div></div></div></section></main></div>
-  </body>
+<script>
+function toggleExpand(btn, id) {
+  var panel = document.getElementById(id);
+  var open  = btn.getAttribute('aria-expanded') === 'true';
+  if (open) {
+    panel.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+    // restore button text
+    btn.childNodes[0].nodeValue = btn.dataset.label + ' ';
+  } else {
+    panel.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+    // hide button by collapsing its height so content flows naturally
+    btn.style.display = 'none';
+  }
+}
+// Store original labels before any click
+document.querySelectorAll('.expand-btn').forEach(function(btn) {
+  btn.dataset.label = btn.childNodes[0].nodeValue.trim();
+});
+</script>
+</body>
 </html>
